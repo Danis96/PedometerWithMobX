@@ -1,0 +1,199 @@
+{
+  "modal_helper": {
+    "error": "Error",
+    "btn_text": "Ok",
+    "email_valid": "Email is not valid",
+    "pass_length_valid": "Password must be at least 4 characters long",
+    "pass_confirm_valid": "Passwords are not matching"
+  },
+  "gender_items": {
+    "male": "Male",
+    "female": "Female"
+  },
+  "logout": {
+    "title": "Logout",
+    "body": "Are you sure you want to logout?",
+    "btn_ok": "Ok",
+    "btn_cancel": "Cancel"
+  },
+  "welcome" : {
+    "lets" : "LET'S",
+    "walk" : "WALK IT OUT",
+    "start": "Start"
+  },
+  "registration" : {
+    "new_user": "NEW USER?",
+    "register": "REGISTER",
+    "btn_register": "Register",
+    "have_account": "Already have account? Login",
+    "have_account_link": " Login",
+    "reg_email_field_hint": "Enter your email...",
+    "reg_terms": "I acknowledge and accept terms of use!",
+    "reg_terms_link": " terms of use!"
+  },
+  "registration_password" : {
+    "setup_your": "SETUP YOUR",
+    "password": "PASSWORD",
+    "password_field_hint": "Password",
+    "confirm_password_field_hint": "Confirm password",
+    "btn_reg_password": "Save",
+    "empty": "Fields cannot be empty"
+  },
+  "onBoarding": {
+    "personal": "PERSONAL",
+    "data": "DATA",
+    "headline_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue velit, luctus non blandit id, eleifend at justo. In justo est, consectetur laoreet dui at, imperdiet....",
+    "gender_field_hint": "Select your gender",
+    "age_field_hint": "Enter your age",
+    "name_field_hint": "Enter your name",
+    "last_name_field_hint": "Enter your last name",
+    "height_field_hint": "Enter your height",
+    "weight_field_hint": "Enter your weight",
+    "other_field_hint": "Other info",
+    "municipality_hint": "Choose municipality",
+    "btn_continue": "Continue"
+  },
+  "question": {
+    "answer" : "ANSWER SOME",
+    "questions": "QUESTIONS",
+    "proceed_text": "In order to proceed please, answer few questions",
+    "btn_questions": "Continue"
+  },
+  "questions": {
+    "title" : "QUESTION",
+    "answer_no" : "No",
+    "answer_yes": "Yes",
+    "question_desc_1": "Has your doctor ever said that you have a heart condition OR high bloud pressure?",
+    "question_desc_2": "Do you feel pain in your chest at rest, during your daily activities of living OR when you do physical activity?",
+    "question_desc_3": "Do you lose balance because of dizziness OR have you lost consciousness in the last 12 months? Please answer NO if your dizziness was associated with over-breathing (including during vigorous exercise).",
+    "question_desc_4": "Have you ever been diagnosed with  another chronic medical condition (other then heart disease or high blood pressure)? ",
+    "question_desc_5": "Are you currently taking prescribed medications for a chronic medical condition?",
+    "question_desc_6": "Do you currently have (or have had within the past 12 months) a bone, joint, or soft tissue (muscle, ligament, or tendon) problem that could be made worse by becoming more physically active?",
+    "question_desc_7": "Has your doctor ever said that you should only do medically supervised physical activity?"
+  },
+  "login": {
+    "have_acc": "HAVE ACCOUNT?",
+    "login": "LOGIN",
+    "new_user": "Are you a new user? Register",
+    "new_user_link": "Register",
+    "login_email_field_hint": "Enter your email...",
+    "login_pass_field_hint": "Enter your password...",
+    "forgot_pass_btn_text": "Forgot password?",
+    "login_btn_text": "Login"
+  },
+  "forgot_pass_email": {
+    "cant_remember": "CAN’T REMEMBER?",
+    "password": "PASSWORD",
+    "email_field_hint": "Enter your email...",
+    "btn_text": "Reset"
+  },
+  "forgot_pass_code": {
+    "enter_your": "ENTER YOUR",
+    "code": "CODE",
+    "code_field_hint": "Enter code here...",
+    "btn_continue": "Continue",
+    "resend": "You didn't get the code? Send again",
+    "resend_link": "Send again"
+  },
+  "home": {
+    "hi": "HI ",
+    "history_data": "History data",
+    "start_test": "START TEST",
+    "top_3_res": "Top 3 result",
+    "distance": "  distance",
+    "meter": "m"
+  },
+  "agreement": {
+    "lets_try": "LET’S TRY",
+    "test": "TEST",
+    "main_text": "The object of this test is to walk as far as possible for 6 minutes. You will walk straight on flat surface for 6 minutes. 6 minutes is a long time to walk, so you will be exerting yourself. You will probably get out of breath or become exhausted. You are permitted to slow down, to stop, and to rest as necessary. You may lean against the wall while resting if that is possible, but resume walking as soon as you are able.\n\nYou will be walking in a straight line.\n\n“Are you ready to do that? The application counter will keep track of your progress. It will inform you about the progress every minute. Remember that the object is to walk AS FAR AS POSSIBLE for 6 minutes, but don’t run or jog.\n\nStart now, or whenever you are ready.”",
+    "confirm_check": "I confirm",
+    "btn_cancel": "Cancel",
+    "btn_start": "Start"
+  },
+  "agreement_test": {
+    "do_your_thing": "DO YOUR THING",
+    "walk": "WALK",
+    "you_are_doing_well": "You are doing well!",
+    "you_have": "You have ",
+    "min": "minutes ",
+    "to_go": "to go",
+    "current_distance": "Current distance: "
+  },
+  "agreement_success": {
+    "you_did": "YOU DID",
+    "great_job": "GREAT JOB",
+    "total_distance": "Total distance: "
+  },
+  "settings": {
+    "application": "APPLICATION",
+    "settings": "SETTINGS",
+    "edit_profile": "Edit profile",
+    "change_password": "Change password",
+    "history_data": "See history data",
+    "lang": "Language",
+    "delete_acc": "Delete account",
+    "logout": "Logout",
+    "delete_modal": "Delete account?",
+    "delete_modal_body": "Are you sure you want to delete your account?"
+  },
+  "profile": {
+    "edit": "EDIT",
+    "profile": "PROFILE",
+    "gender_field_hint": "Select your gender",
+    "age_field_hint": "Enter your age",
+    "height_field_hint": "Enter your height",
+    "weight_field_hint": "Enter your weight",
+    "other_field_hint": "Other info",
+    "municipality_hint": "Choose municipality",
+    "btn_save": "Save",
+    "success_data_changed": "Your profile info are successfully changed"
+  },
+  "change_pass": {
+    "change_your": "CHANGE YOUR",
+    "password": "PASSWORD",
+    "old": "Old password",
+    "new": "New password",
+    "confirm": "Confirm password",
+    "btn_save": "Save",
+    "success": "Success",
+    "modal_body": "Password changed successfully"
+  },
+  "history": {
+    "your_history": "YOUR HISTORY",
+    "data": "DATA",
+    "history_data": "History data",
+    "results": "Results"
+  },
+  "walking_type": {
+    "title": "Choose your test",
+    "test_1_title": "Indoor and Supervision",
+    "test_1_desc": "Due to low GPS data in indoor buildings please choose this walking type test. This test will be followed by your supervisior.",
+    "test_2_title": "Outdoor",
+    "test_2_desc": "Assuming you will walk outside we will use GPS data to track you distance. Please walk straight forward withour running or joging.",
+    "confirm_indoor_and_supervision": "Indoor & Supervision",
+    "confirm_free_will": "Outdoor"
+  },
+  "supported_languages" : {
+    "english" : "English",
+    "slovenian"  : "Slovenian"
+  },
+  "language_selection" : {
+    "alert_title": "Change Language",
+    "alert_content": "Are you sure you want to change app language?",
+    "change_title": "Language screen"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "motivation": {
+    "5min": "You are doing well. You have 5 minutes to go.",
+    "4min": "Keep up the good work. You have 4 minutes to go.",
+    "3min": "You are doing well. You are halfway done.",
+    "2min": "Keep up the good work. You have only 2 minutes left.",
+    "1min": "You are doing well. You have only 1 minute to go.",
+    "15sec": "Any time will be the end of the test.",
+    "stop": "Please stop where you are."
+  }
+}

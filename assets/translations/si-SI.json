@@ -1,0 +1,199 @@
+{
+  "modal_helper": {
+    "error": "Napaka",
+    "btn_text": "V redu",
+    "email_valid": "E-pošta ni veljavna",
+    "pass_length_valid": "Geslo mora biti dolgo vsaj 4 znake",
+    "pass_confirm_valid": "Gesla se ne ujemajo"
+  },
+  "gender_items": {
+    "male": "Moški",
+    "female": "Ženska"
+  },
+  "logout": {
+    "title": "Odjava",
+    "body": "Ali ste prepričani, da se želite odjaviti?",
+    "btn_ok": "Ok",
+    "btn_cancel": "Prekliči"
+  },
+  "welcome" : {
+    "lets" : "GREMO",
+    "walk" : "VEN",
+    "start": "Začni"
+  },
+  "registration" : {
+    "new_user": "NOV UPORABNIK?",
+    "register": "REGISTRIRAJ SE",
+    "btn_register": "Registriraj se",
+    "have_account": "Že imate račun? Vpiši se",
+    "have_account_link": " Vpiši se",
+    "reg_email_field_hint": "Vpišite svoj elektronski naslov...",
+    "reg_terms": "Potrjujem in sprejemam pogoje uporabe!",
+    "reg_terms_link": " pogoje uporabe!"
+  },
+  "registration_password" : {
+    "setup_your": "NASTAVITE",
+    "password": "VAŠE GESLO",
+    "password_field_hint": "Geslo",
+    "confirm_password_field_hint": "Potrdi geslo",
+    "btn_reg_password": "Shrani",
+    "empty": "Polja ne smejo biti prazna"
+  },
+  "onBoarding": {
+    "personal": "OSEBNI",
+    "data": "PODATKI",
+    "headline_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue velit, luctus non blandit id, eleifend at justo. In justo est, consectetur laoreet dui at, imperdiet....",
+    "gender_field_hint": "Izberite svoj spol",
+    "age_field_hint": "Vnesite svojo starost",
+    "name_field_hint": "Vnesite svoje ime",
+    "last_name_field_hint": "Vnesite svoj priimek",
+    "height_field_hint": "Vnesite svojo višino",
+    "weight_field_hint": "Vnesite svojo težo",
+    "other_field_hint": "Druge informacije",
+    "municipality_hint": "Izberite občino",
+    "btn_continue": "Nadaljuj"
+  },
+  "question": {
+    "answer" : "ODGOVORI NA NEKAJ",
+    "questions": "VPRAŠANJ",
+    "proceed_text": "Za nadaljevanje prosim odgovorite na nekaj vprašanj",
+    "btn_questions": "Nadaljuj"
+  },
+  "questions": {
+    "title" : "QUESTION",
+    "answer_no" : "No",
+    "answer_yes": "Yes",
+    "question_desc_1": "Has your doctor ever said that you have a heart condition OR high bloud pressure?",
+    "question_desc_2": "Do you feel pain in your chest at rest, during your daily activities of living OR when you do physical activity?",
+    "question_desc_3": "Do you lose balance because of dizziness OR have you lost consciousness in the last 12 months? Please answer NO if your dizziness was associated with over-breathing (including during vigorous exercise).",
+    "question_desc_4": "Have you ever been diagnosed with  another chronic medical condition (other then heart disease or high blood pressure)? ",
+    "question_desc_5": "Are you currently taking prescribed medications for a chronic medical condition?",
+    "question_desc_6": "Do you currently have (or have had within the past 12 months) a bone, joint, or soft tissue (muscle, ligament, or tendon) problem that could be made worse by becoming more physically active?",
+    "question_desc_7": "Has your doctor ever said that you should only do medically supervised physical activity?"
+  },
+  "login": {
+    "have_acc": "IMATE RAČUN?",
+    "login": "VPIŠI SE",
+    "new_user": "Ste nov uporabnik? Registriraj se",
+    "new_user_link": "Registriraj se",
+    "login_email_field_hint": "Vpišite svoj elektronski naslov...",
+    "login_pass_field_hint": "Vnesite svoje geslo ...",
+    "forgot_pass_btn_text": "Ste pozabili geslo?",
+    "login_btn_text": "Vpiši se"
+  },
+  "forgot_pass_email": {
+    "cant_remember": "SE NE SPOMNITE?",
+    "password": "GESLO",
+    "email_field_hint": "Vpišite svoj elektronski naslov...",
+    "btn_text": "Ponastaviti"
+  },
+  "forgot_pass_code": {
+    "enter_your": "VNESI SVOJO",
+    "code": "KODO",
+    "code_field_hint": "Tukaj vnesite kodo ...",
+    "btn_continue": "Nadaljuj",
+    "resend": "Nisi dobil kode? Pošlji ponovno",
+    "resend_link": "Pošlji ponovno"
+  },
+  "home" : {
+    "hi": "Živjo",
+    "history_data": "Podatki o zgodovini",
+    "start_test": "ZAČNI TEST",
+    "top_3_res": "Top 3 rezultat",
+    "distance": "  razdalja",
+    "meter": "m"
+  },
+  "agreement": {
+    "lets_try": "POSKUSIMO",
+    "test": "TEST",
+    "main_text": "Cilj tega testa je 6 minut hoditi čim dlje. Hodili boste naravnost po ravni površini 6 minut. 6 minut je dolgo za hojo, zato se boste zelo potrudili. Verjetno boste ostali brez sape ali izčrpani. Dovoljeno vam je, da upočasnite, se ustavite in po potrebi počivate. Med počitkom se lahko naslonite na steno, če je to mogoče, vendar nadaljujte s hojo takoj, ko boste lahko.\n\nHodili boste v ravni črti.\n\n»Ali ste pripravljeni na to? Števec prijav bo spremljal vaš napredek. Vsako minuto vas bo obveščal o napredku. Ne pozabite, da je cilj 6 minut hoditi, ČIM DALJ MOŽNO, vendar ne teči ali teči.\n\nZačnite zdaj ali kadar koli ste pripravljeni.\"",
+    "confirm_check": "Potrjujem",
+    "btn_cancel": "Prekliči",
+    "btn_start": "Začni"
+  },
+  "agreement_test": {
+    "do_your_thing": "NAREDI SVOJE",
+    "walk": "HODI",
+    "you_are_doing_well": "Dobro vam gre!",
+    "you_have": "Časa imate ",
+    "min": "minut",
+    "to_go": "",
+    "current_distance": "Trenutna razdalja: "
+  },
+  "agreement_success": {
+    "you_did": "SI DELO",
+    "great_job": "ODLIČNO",
+    "total_distance": "Skupna razdalja: "
+  },
+  "settings": {
+    "application": "NASTAVITVE",
+    "settings": "APLIKACIJE",
+    "edit_profile": "Uredi profil",
+    "change_password": "Spremeni geslo",
+    "history_data": "Oglejte si podatke zgodovine",
+    "lang": "Jezik",
+    "delete_acc": "Izbriši račun",
+    "logout": "Odjava",
+    "delete_modal": "Izbriši račun?",
+    "delete_modal_body": "Ali ste prepričani, da želite izbrisati svoj račun?"
+  },
+  "profile": {
+    "edit": "UREDI",
+    "profile": "PROFIL",
+    "gender_field_hint": "Izberite svoj spol",
+    "age_field_hint": "Vnesite svojo starost",
+    "height_field_hint": "Vnesite svojo višino",
+    "weight_field_hint": "Vnesite svojo težo",
+    "other_field_hint": "Druge informacije",
+    "municipality_hint": "Izberite občino",
+    "btn_save": "Shrani",
+    "success_data_changed": "Podatki o vašem profilu so bili uspešno spremenjeni"
+  },
+  "change_pass": {
+    "change_your": "ZAMENJAJTE",
+    "password": "GESLO",
+    "old": "Staro geslo",
+    "new": "Novo geslo",
+    "confirm": "Potrdi geslo",
+    "btn_save": "Shrani",
+    "success": "Uspeh",
+    "modal_body": "Geslo je bilo uspešno spremenjeno"
+  },
+  "history": {
+    "your_history": "PODATKI VAŠE",
+    "data": "ZGODOVINE",
+    "history_data": "Podatki o zgodovini",
+    "results": "Rezultati"
+  },
+  "walking_type": {
+    "title": "Choose your test",
+    "test_1_title": "Indoor and Supervision",
+    "test_1_desc": "Due to low GPS data in indoor buildings please choose this walking type test. This test will be followed by your supervisior.",
+    "test_2_title": "Na prostem",
+    "test_2_desc": "Assuming you will walk outside we will use GPS data to track you distance. Please walk straight forward withour running or joging.",
+    "confirm_indoor_and_supervision": "Indoor & Supervision",
+    "confirm_free_will": "Na prostem"
+  },
+  "supported_languages" : {
+    "english" : "English",
+    "slovenian"  : "Slovenian"
+  },
+  "language_selection" : {
+    "alert_title": "Spremeni jezik",
+    "alert_content": "Ali ste prepričani, da želite spremeniti jezik aplikacije?",
+    "change_title": "Jezikovni zaslon"
+  },
+  "common": {
+    "yes": "Da",
+    "no": "Ne"
+  },
+  "motivation": {
+    "5min": "Bravo, dobro vam gre. Do konca imate še 5 minut.",
+    "4min": "Preverite vaš srčni utrip. Bravo, dobro vam gre. Do konca imate še 4 minute.",
+    "3min": "Bravo, dobro vam gre. Ste že na polovici testa.",
+    "2min": "Bravo, dobro vam gre. Do konca imate še 2 minuti.",
+    "1min": "Bravo, dobro vam gre. Do konca je le še minuta.",
+    "15sec": "Vsak čas bo konec testa.",
+    "stop": "Stop! Počakajte na mestu."
+  }
+}
