@@ -47,10 +47,10 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _getInitialData() async {
     email = await storagePrefs.readEmailFromShared();
-    await authStore.getUserData().then((value) => authStore.getUserInitials());
+    await authStore.fetchDBUser().then((value) => authStore.getUserInitials());
     await profileStore.getPhoto();
-    await profileStore.getDistances(email!);
-    await profileStore.getTopDistances(email!);
+    await profileStore.fetchDBDistance(email!);
+    await profileStore.fetchDBTopDistance(email!);
   }
 
   @override

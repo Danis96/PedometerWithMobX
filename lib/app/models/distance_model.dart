@@ -15,9 +15,18 @@ class DistanceModel {
 
   Map<String, dynamic> toJson() => _$DistanceModelToJson(this);
 
+  static DistanceModel dbFromJson(dynamic json) {
+    return DistanceModel(
+        id: json['Id'] as int, distance: json['Distance'] as int, createdDate: json['CreatedDate'] as String, email: json['Email'] as String);
+  }
+
+  Map<String, dynamic> dbToJson() {
+    final Map<String, dynamic> map = <String, dynamic>{'Id': id, 'Email': email, 'CreatedDate': createdDate, 'Distance': distance};
+    return map;
+  }
+
   @JsonKey(name: 'Id', defaultValue: 0)
   int id;
-
   @JsonKey(name: 'Email', defaultValue: '')
   String email;
   @JsonKey(name: 'CreatedDate', defaultValue: '')

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:ljubljana/app/database/db_repositories/db_distance_repository.dart';
 import 'package:mobx/mobx.dart';
 import 'dart:io';
 
@@ -18,9 +19,11 @@ abstract class UserProfileBase with Store {
   UserProfileBase() {
     _profileRepository = UserProfileRepository();
     _distanceRepository = DistanceRepository();
+    _dbDistanceRepository = DBDistanceRepository();
   }
 
   DistanceRepository? _distanceRepository;
+  DBDistanceRepository? _dbDistanceRepository;
   UserProfileRepository? _profileRepository;
 
   @observable
@@ -97,23 +100,75 @@ abstract class UserProfileBase with Store {
   }
 
   @action
-  Future<String?> getDistances(String email) async {
+  Future<String?> getTopDistances(String email) async {
     try {
-      distances = await _distanceRepository!.getUserDistances(email);
+      final List<DistanceModel> apiTopDistance = await _dbDistanceRepository!.fetchTopDistances();
+      await _dbDistanceRepository!.deleteTopDistanceTable();
+      await insertTopDistanceIntoDB(apiTopDistance);
+      topDistances = apiTopDistance;
       return null;
-    } catch(e) {
+    } catch (e) {
       return e.toString();
     }
   }
 
   @action
-  Future<String?> getTopDistances(String email) async {
+  Future<String?> fetchDBTopDistance(String email) async {
     try {
-      topDistances = await _distanceRepository!.getUserTopDistances(email);
+      topDistances = await _dbDistanceRepository!.fetchTopDistances();
+      topDistances.sort((DistanceModel a, DistanceModel b) {
+        final int res = a.id.compareTo(b.id);
+        return res;
+      });
+      getTopDistances(email);
       return null;
-    } catch(e) {
+    } catch (e) {
       return e.toString();
     }
   }
 
+  @action
+  Future<void> insertTopDistanceIntoDB(List<DistanceModel> models) async {
+    for (int i = 0; i < models.length; i++) {
+      models[i].id = i + 1;
+      await _dbDistanceRepository!.insertTopDistance(models[i]);
+    }
+  }
+
+
+  @action
+  Future<String?> getDistances(String email) async {
+    try {
+      final List<DistanceModel> apiDistanceList = await _distanceRepository!.getUserDistances(email);
+      await _dbDistanceRepository!.deleteDistanceTable();
+      await insertDistanceIntoDB(apiDistanceList);
+      distances = apiDistanceList;
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  @action
+  Future<String?> fetchDBDistance(String email) async {
+    try {
+      distances = await _dbDistanceRepository!.fetchDistances();
+      distances.sort((DistanceModel a, DistanceModel b) {
+        final int res = a.id.compareTo(b.id);
+        return res;
+      });
+      getDistances(email);
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  @action
+  Future<void> insertDistanceIntoDB(List<DistanceModel> models) async {
+    for (int i = 0; i < models.length; i++) {
+      models[i].id = i + 1;
+      await _dbDistanceRepository!.insertDistanceModel(models[i]);
+    }
+  }
 }

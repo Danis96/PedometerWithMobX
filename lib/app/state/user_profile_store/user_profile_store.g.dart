@@ -105,6 +105,32 @@ mixin _$UserProfileStore on UserProfileBase, Store {
     return _$deletePhotoAsyncAction.run(() => super.deletePhoto(context));
   }
 
+  late final _$getTopDistancesAsyncAction =
+      AsyncAction('UserProfileBase.getTopDistances', context: context);
+
+  @override
+  Future<String?> getTopDistances(String email) {
+    return _$getTopDistancesAsyncAction.run(() => super.getTopDistances(email));
+  }
+
+  late final _$fetchDBTopDistanceAsyncAction =
+      AsyncAction('UserProfileBase.fetchDBTopDistance', context: context);
+
+  @override
+  Future<String?> fetchDBTopDistance(String email) {
+    return _$fetchDBTopDistanceAsyncAction
+        .run(() => super.fetchDBTopDistance(email));
+  }
+
+  late final _$insertTopDistanceIntoDBAsyncAction =
+      AsyncAction('UserProfileBase.insertTopDistanceIntoDB', context: context);
+
+  @override
+  Future<void> insertTopDistanceIntoDB(List<DistanceModel> models) {
+    return _$insertTopDistanceIntoDBAsyncAction
+        .run(() => super.insertTopDistanceIntoDB(models));
+  }
+
   late final _$getDistancesAsyncAction =
       AsyncAction('UserProfileBase.getDistances', context: context);
 
@@ -113,12 +139,21 @@ mixin _$UserProfileStore on UserProfileBase, Store {
     return _$getDistancesAsyncAction.run(() => super.getDistances(email));
   }
 
-  late final _$getTopDistancesAsyncAction =
-      AsyncAction('UserProfileBase.getTopDistances', context: context);
+  late final _$fetchDBDistanceAsyncAction =
+      AsyncAction('UserProfileBase.fetchDBDistance', context: context);
 
   @override
-  Future<String?> getTopDistances(String email) {
-    return _$getTopDistancesAsyncAction.run(() => super.getTopDistances(email));
+  Future<String?> fetchDBDistance(String email) {
+    return _$fetchDBDistanceAsyncAction.run(() => super.fetchDBDistance(email));
+  }
+
+  late final _$insertDistanceIntoDBAsyncAction =
+      AsyncAction('UserProfileBase.insertDistanceIntoDB', context: context);
+
+  @override
+  Future<void> insertDistanceIntoDB(List<DistanceModel> models) {
+    return _$insertDistanceIntoDBAsyncAction
+        .run(() => super.insertDistanceIntoDB(models));
   }
 
   @override

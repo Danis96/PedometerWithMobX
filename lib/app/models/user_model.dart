@@ -21,6 +21,38 @@ class User {
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
+  static User dbFromJson(dynamic json) {
+    final int jsonIsOnBoardingFinished = json['IsOnboardingFinished'] as int;
+    return User(
+      age: json['Age'],
+      email: json['Email'],
+      firstName: json['FirstName'],
+      gender: json['Gender'],
+      height: json['Height'],
+      info: json['Info'],
+      lastName: json['LastName'],
+      municipality: json['Municipality'],
+      weight: json['Weight'],
+      isOnBoardingFinished: jsonIsOnBoardingFinished != 0,
+    );
+  }
+
+  Map<String, dynamic> dbToJson() {
+    final Map<String, dynamic> map = <String, dynamic>{
+      'Age': age,
+      'Email': email,
+      'FirstName': firstName,
+      'LastName': lastName,
+      'Info': info,
+      'Gender': gender,
+      'Height': height,
+      'Weight': weight,
+      'Municipality': municipality,
+      'IsOnboardingFinished': isOnBoardingFinished ? 1 : 0,
+    };
+    return map;
+  }
+
   @JsonKey(name: 'FirstName', defaultValue: '')
   String firstName;
   @JsonKey(name: 'LastName', defaultValue: '')

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import '../app/config/flavor_config.dart';
 import '../app/locator.dart';
@@ -18,10 +19,10 @@ class HTTPClient {
 
     final String uri = FlavorConfig.instance.values.baseUrl + url + ((params != null) ? queryParameters(params) : '');
     final Uri myUri = Uri.parse(uri);
-    print(uri);
+    debugPrint(uri);
     try {
       final http.Response response = await http.get(myUri, headers: headersType);
-      print(response.body.toString());
+      debugPrint(response.body.toString());
       responseJson = _returnResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet Connection');
@@ -36,7 +37,7 @@ class HTTPClient {
     final Uri myUri = Uri.parse(uri);
     try {
       final http.Response response = await http.delete(myUri, headers: headersType, body: body != null ? jsonEncode(body) : null);
-      print(response.body.toString());
+      debugPrint(response.body.toString());
       responseJson = _returnResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet Connection');
@@ -50,7 +51,7 @@ class HTTPClient {
     try {
       final String uri = apiBase + url;
       final Uri myUri = Uri.parse(uri);
-      print('Json body ${jsonEncode(body)}');
+      debugPrint('Json body ${jsonEncode(body)}');
       final http.Response response = await http.post(myUri, body: body != null ? jsonEncode(body) : null, headers: headerType);
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -83,7 +84,7 @@ class HTTPClient {
     try {
       final String uri = apiBase + url;
       final Uri myUri = Uri.parse(uri);
-      print(body.toString());
+      debugPrint(body.toString());
       final http.Response response = await http.put(myUri, body: jsonEncode(body), headers: headerType);
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -101,7 +102,7 @@ class HTTPClient {
     dynamic responseJson;
     try {
       final Uri myUri = Uri.parse(url);
-      print(body.toString());
+      debugPrint(body.toString());
       final http.Response response = await http.put(myUri, body: body);
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -113,7 +114,7 @@ class HTTPClient {
   }
 
   Future<dynamic> postMultipartData(String url, Map<String, String> body, Map<String, String> headerType, File file) async {
-    print(body.toString());
+    debugPrint(body.toString());
     final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
@@ -135,7 +136,7 @@ class HTTPClient {
   }
 
   Future<dynamic> getMultipartData(String url, Map<String, String> body, Map<String, String> headerType) async {
-    print(body.toString());
+    debugPrint(body.toString());
     final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
@@ -155,7 +156,7 @@ class HTTPClient {
   }
 
   Future<dynamic> postMultipartImage(String url, Map<String, String> headerType, String imageFile) async {
-    print(imageFile);
+    debugPrint(imageFile);
     final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
@@ -165,7 +166,7 @@ class HTTPClient {
       final http.StreamedResponse response = await request.send();
       final http.Response parserResponse = await http.Response.fromStream(response);
       responseJson = _returnResponse(parserResponse);
-      print(responseJson);
+      debugPrint(responseJson);
     } on SocketException {
       throw InternetException('No internet connection');
     } on Exception catch (_) {
@@ -183,7 +184,7 @@ class HTTPClient {
   }
 
   dynamic _returnResponse(http.Response response) async {
-    print(response.statusCode.toString());
+    debugPrint(response.statusCode.toString());
     switch (response.statusCode) {
       case 200:
       case 204:

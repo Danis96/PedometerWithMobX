@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:ljubljana/app/database/db_repositories/db_user_repository.dart';
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,11 +21,13 @@ abstract class AuthBase with Store {
     _authRepository = AuthRepository();
     _profileRepository = UserProfileRepository();
     _municipalityRepository = MunicipalityRepository();
+    _dbUserRepository = DBUserRepository();
   }
 
   AuthRepository? _authRepository;
   UserProfileRepository? _profileRepository;
   MunicipalityRepository? _municipalityRepository;
+  DBUserRepository? _dbUserRepository;
 
   // registration controllers
   final TextEditingController emailRegistrationController = TextEditingController();
@@ -82,7 +85,10 @@ abstract class AuthBase with Store {
   Future<String?> getUserData() async {
     try {
       final String email = await storagePrefs.readEmailFromShared();
-      _user = await _profileRepository!.getUserDetails(emailLoginController.text.isNotEmpty ? emailLoginController.text : email);
+      final User apiUserData = await _profileRepository!.getUserDetails(emailLoginController.text.isNotEmpty ? emailLoginController.text : email);
+      await _dbUserRepository!.deleteUserTable();
+      await insertUserInDatabase(apiUserData);
+      _user = apiUserData;
       await storagePrefs.setValue(StoragePrefsManager.USER_DATA_KEY, json.encode(_user.toJson()));
       await setIsUserFinishedOnBoarding();
       setUserDataToControllers();
@@ -90,6 +96,20 @@ abstract class AuthBase with Store {
     } catch (e) {
       return e.toString();
     }
+  }
+
+  Future<String?> fetchDBUser() async {
+    try {
+      _user = await _dbUserRepository!.fetchUserDB();
+      getUserData();
+      return null;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  Future<void> insertUserInDatabase(User model) async {
+    await _dbUserRepository!.insertUser(model);
   }
 
   @action
