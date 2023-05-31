@@ -7,6 +7,7 @@ class FOSTappableText extends StatelessWidget {
     @required this.text,
     @required this.links,
     this.onPressed,
+    this.widgetKey = const Key('placeholder'),
     this.defaultStyle = const TextStyle(color: Color.fromRGBO(59, 72, 86, 1.0), fontSize: 13, fontWeight: FontWeight.w400),
     this.linkStyle =const TextStyle(color: Color.fromRGBO(59, 72, 86, 1.0), fontSize: 13, fontWeight: FontWeight.w500, decoration: TextDecoration.underline),
     this.textAlign = TextAlign.center,
@@ -18,6 +19,7 @@ class FOSTappableText extends StatelessWidget {
   /// Links in text order, examples: 'link', 'link#url'
   /// Multiple links are separated by #
   final String? links;
+  final Key widgetKey;
   final Function(int)? onPressed;
   final TextStyle defaultStyle;
   final TextStyle linkStyle;
@@ -63,6 +65,7 @@ class FOSTappableText extends StatelessWidget {
     }
 
     return RichText(
+      key: widgetKey,
       text: TextSpan(
         style: defaultStyle,
         children: _generateContent(),

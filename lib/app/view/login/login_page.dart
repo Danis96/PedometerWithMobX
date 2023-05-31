@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
               widget.auth.loginUser().then((String? error) {
                 Navigator.of(context).pop();
                 ModalHelper().returnErrorModalOrFn(context, error, function: () async {
-                  widget.auth.getUserData().then((String? error) {
+                  widget.auth.fetchDBUser().then((String? error) {
                     if (widget.auth.isOnBoardingFinished) {
                       Navigator.of(context).pushNamed(homeScreen);
                     } else {

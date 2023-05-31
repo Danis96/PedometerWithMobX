@@ -4,11 +4,13 @@ import 'package:ljubljana/theme/color_helper.dart';
 enum BtnType { orange, grey, blue, green }
 
 class FOSButton extends StatelessWidget {
-  const FOSButton({Key? key, this.buttonTitle = '', this.disabled = false, @required this.onPressed, this.style, this.btnType = BtnType.orange})
+  const FOSButton({Key? key, this.widgetKey = const Key('placeholder'), this.buttonTitle = '', this.disabled = false, @required this.onPressed, this.style, this.btnType = BtnType.orange})
       : super(key: key);
+
 
   final String buttonTitle;
   final bool disabled;
+  final Key widgetKey;
   final Function? onPressed;
   final ButtonStyle? style;
   final BtnType btnType;
@@ -31,7 +33,7 @@ class FOSButton extends StatelessWidget {
       width: 180,
       height: 60,
       child: ElevatedButton(
-        key: key,
+        key: widgetKey,
         onPressed: disabled ? null : () => onPressed!(),
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color?>(btnTypeColor(btnType)),

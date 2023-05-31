@@ -13,13 +13,13 @@ mixin _$PedometerStore on PedometerBase, Store {
       Atom(name: 'PedometerBase.stepCountStream', context: context);
 
   @override
-  Stream<StepCount> get stepCountStream {
+  Stream<StepCount>? get stepCountStream {
     _$stepCountStreamAtom.reportRead();
     return super.stepCountStream;
   }
 
   @override
-  set stepCountStream(Stream<StepCount> value) {
+  set stepCountStream(Stream<StepCount>? value) {
     _$stepCountStreamAtom.reportWrite(value, super.stepCountStream, () {
       super.stepCountStream = value;
     });
@@ -29,13 +29,13 @@ mixin _$PedometerStore on PedometerBase, Store {
       Atom(name: 'PedometerBase.pedestrianStatusStream', context: context);
 
   @override
-  Stream<PedestrianStatus> get pedestrianStatusStream {
+  Stream<PedestrianStatus>? get pedestrianStatusStream {
     _$pedestrianStatusStreamAtom.reportRead();
     return super.pedestrianStatusStream;
   }
 
   @override
-  set pedestrianStatusStream(Stream<PedestrianStatus> value) {
+  set pedestrianStatusStream(Stream<PedestrianStatus>? value) {
     _$pedestrianStatusStreamAtom
         .reportWrite(value, super.pedestrianStatusStream, () {
       super.pedestrianStatusStream = value;
@@ -46,13 +46,13 @@ mixin _$PedometerStore on PedometerBase, Store {
       Atom(name: 'PedometerBase.listener', context: context);
 
   @override
-  StreamSubscription<dynamic> get listener {
+  StreamSubscription<dynamic>? get listener {
     _$listenerAtom.reportRead();
     return super.listener;
   }
 
   @override
-  set listener(StreamSubscription<dynamic> value) {
+  set listener(StreamSubscription<dynamic>? value) {
     _$listenerAtom.reportWrite(value, super.listener, () {
       super.listener = value;
     });
@@ -62,13 +62,13 @@ mixin _$PedometerStore on PedometerBase, Store {
       Atom(name: 'PedometerBase.pedestrianListener', context: context);
 
   @override
-  StreamSubscription<dynamic> get pedestrianListener {
+  StreamSubscription<dynamic>? get pedestrianListener {
     _$pedestrianListenerAtom.reportRead();
     return super.pedestrianListener;
   }
 
   @override
-  set pedestrianListener(StreamSubscription<dynamic> value) {
+  set pedestrianListener(StreamSubscription<dynamic>? value) {
     _$pedestrianListenerAtom.reportWrite(value, super.pedestrianListener, () {
       super.pedestrianListener = value;
     });

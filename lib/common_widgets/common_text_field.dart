@@ -67,7 +67,7 @@ class _FOSTextFormField extends State<FOSTextFormField> {
     bool isPasswordType() => widget.type == TextFieldType.passwordType;
     bool isDropDownType() => widget.type == TextFieldType.dropdownFieldType;
     return TextFormField(
-      key: widget.key,
+      key: widget.fKey,
       maxLines: widget.type == TextFieldType.textAreaType ? 5 : 1,
       textCapitalization: widget.textCapitalization,
       inputFormatters: widget.inputFormatters,

@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import '../app/config/flavor_config.dart';
-import '../app/locator.dart';
-import '../app/repositories/navigation_repo.dart';
 import 'api_exceptions.dart';
 
 class HTTPClient {
@@ -12,16 +10,13 @@ class HTTPClient {
 
   static HTTPClient get instance => _singleton;
 
-  final NavigationRepo _navigationService = locator<NavigationRepo>();
-
   Future<dynamic> fetchData(String url, Map<String, String> headersType, {Map<String, dynamic>? params}) async {
     dynamic responseJson;
 
     final String uri = FlavorConfig.instance.values.baseUrl + url + ((params != null) ? queryParameters(params) : '');
-    final Uri myUri = Uri.parse(uri);
     debugPrint(uri);
     try {
-      final http.Response response = await http.get(myUri, headers: headersType);
+      final http.Response response = await http.get(Uri.parse(uri), headers: headersType);
       debugPrint(response.body.toString());
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -32,11 +27,9 @@ class HTTPClient {
 
   Future<dynamic> deleteData(String url, Map<String, String> headersType, {Map<String, String>? params, Map<String, dynamic>? body}) async {
     dynamic responseJson;
-
     final String uri = FlavorConfig.instance.values.baseUrl + url + ((params != null) ? queryParameters(params) : '');
-    final Uri myUri = Uri.parse(uri);
     try {
-      final http.Response response = await http.delete(myUri, headers: headersType, body: body != null ? jsonEncode(body) : null);
+      final http.Response response = await http.delete(Uri.parse(uri), headers: headersType, body: body != null ? jsonEncode(body) : null);
       debugPrint(response.body.toString());
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -45,14 +38,12 @@ class HTTPClient {
     return responseJson;
   }
 
-  Future<dynamic> postData(String url, Map<String, String> headerType, { dynamic body }) async {
-    final String apiBase = FlavorConfig.instance.values.baseUrl;
+  Future<dynamic> postData(String url, Map<String, String> headerType, {dynamic body}) async {
     dynamic responseJson;
     try {
-      final String uri = apiBase + url;
-      final Uri myUri = Uri.parse(uri);
       debugPrint('Json body ${jsonEncode(body)}');
-      final http.Response response = await http.post(myUri, body: body != null ? jsonEncode(body) : null, headers: headerType);
+      final http.Response response =
+          await http.post(Uri.parse(FlavorConfig.instance.values.baseUrl + url), body: body != null ? jsonEncode(body) : null, headers: headerType);
       responseJson = _returnResponse(response);
     } on SocketException {
       throw InternetException('No internet connection');
@@ -63,12 +54,10 @@ class HTTPClient {
   }
 
   Future<dynamic> patchData(String url, dynamic body, Map<String, String> headerType) async {
-    final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
-      final String uri = apiBase + url;
-      final Uri myUri = Uri.parse(uri);
-      final http.Response response = await http.patch(myUri, body: jsonEncode(body), headers: headerType);
+      final http.Response response =
+          await http.patch(Uri.parse(FlavorConfig.instance.values.baseUrl + url), body: jsonEncode(body), headers: headerType);
       responseJson = _returnResponse(response);
     } on SocketException {
       throw InternetException('No internet connection');
@@ -79,13 +68,11 @@ class HTTPClient {
   }
 
   Future<dynamic> putData(String url, dynamic body, Map<String, String> headerType, {bool isAws = false}) async {
-    final String apiBase = isAws ? '' : FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
-      final String uri = apiBase + url;
-      final Uri myUri = Uri.parse(uri);
       debugPrint(body.toString());
-      final http.Response response = await http.put(myUri, body: jsonEncode(body), headers: headerType);
+      final http.Response response =
+          await http.put(Uri.parse(isAws ? '' : FlavorConfig.instance.values.baseUrl + url), body: jsonEncode(body), headers: headerType);
       responseJson = _returnResponse(response);
     } on SocketException {
       throw InternetException('No internet connection');
@@ -95,15 +82,11 @@ class HTTPClient {
     return responseJson;
   }
 
-  Future<dynamic> put(
-    String url,
-    dynamic body,
-  ) async {
+  Future<dynamic> put(String url, dynamic body) async {
     dynamic responseJson;
     try {
-      final Uri myUri = Uri.parse(url);
       debugPrint(body.toString());
-      final http.Response response = await http.put(myUri, body: body);
+      final http.Response response = await http.put(Uri.parse(url), body: body);
       responseJson = _returnResponse(response);
     } on SocketException {
       throw InternetException('No internet connection');
@@ -115,14 +98,11 @@ class HTTPClient {
 
   Future<dynamic> postMultipartData(String url, Map<String, String> body, Map<String, String> headerType, File file) async {
     debugPrint(body.toString());
-    final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
-      final Uri uri = Uri.parse(apiBase + url);
-      final http.MultipartRequest request = http.MultipartRequest('POST', uri);
-      request.files.add(await http.MultipartFile.fromBytes('Images', file.readAsBytesSync(), filename: 'Photo.jpg',));
+      final http.MultipartRequest request = http.MultipartRequest('POST', Uri.parse(FlavorConfig.instance.values.baseUrl + url));
+      request.files.add(http.MultipartFile.fromBytes('Images', file.readAsBytesSync(), filename: 'Photo.jpg'));
       request.fields.addAll(body);
-
       request.headers.addAll(headerType);
       final http.StreamedResponse response = await request.send();
       final http.Response parserResponse = await http.Response.fromStream(response);
@@ -137,11 +117,9 @@ class HTTPClient {
 
   Future<dynamic> getMultipartData(String url, Map<String, String> body, Map<String, String> headerType) async {
     debugPrint(body.toString());
-    final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
-      final Uri uri = Uri.parse(apiBase + url);
-      final http.MultipartRequest request = http.MultipartRequest('GET', uri)
+      final http.MultipartRequest request = http.MultipartRequest('GET', Uri.parse(FlavorConfig.instance.values.baseUrl + url))
         ..headers.addAll(headerType)
         ..fields.addAll(body);
       final http.StreamedResponse response = await request.send();
@@ -157,11 +135,10 @@ class HTTPClient {
 
   Future<dynamic> postMultipartImage(String url, Map<String, String> headerType, String imageFile) async {
     debugPrint(imageFile);
-    final String apiBase = FlavorConfig.instance.values.baseUrl;
     dynamic responseJson;
     try {
-      final Uri uri = Uri.parse(apiBase + url);
-      final http.MultipartRequest request = http.MultipartRequest('POST', uri)..files.add(await http.MultipartFile.fromPath('image', imageFile));
+      final http.MultipartRequest request = http.MultipartRequest('POST', Uri.parse(FlavorConfig.instance.values.baseUrl + url))
+        ..files.add(await http.MultipartFile.fromPath('image', imageFile));
       request.headers.addAll(headerType);
       final http.StreamedResponse response = await request.send();
       final http.Response parserResponse = await http.Response.fromStream(response);

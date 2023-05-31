@@ -17,10 +17,8 @@ class SplashStore = SplashBase with _$SplashStore;
 abstract class SplashBase with Store {
   SplashBase() {
     onInit();
-    _profileRepository = UserProfileRepository();
   }
 
-  UserProfileRepository? _profileRepository;
   final NavigationRepo _navigationService = locator<NavigationRepo>();
 
   Future<void> onInit() async {
@@ -49,10 +47,9 @@ abstract class SplashBase with Store {
   }
 
   Future<String> decideNextRoute() async {
-    final String email = await storagePrefs.readEmailFromShared();
-    User _user = await _profileRepository!.getUserDetails(email);
-
-    if (_user.isOnBoardingFinished) {
+    final AuthenticationStore store = locator<AuthenticationStore>();
+    await store.fetchDBUser();
+    if (store.user.isOnBoardingFinished) {
       return homeScreen;
     } else {
       return onBoardingScreen;

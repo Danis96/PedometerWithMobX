@@ -19,13 +19,13 @@ abstract class PedometerBase with Store {
   DistanceRepository? _distanceRepository;
 
   @observable
-  late Stream<StepCount> stepCountStream;
+  Stream<StepCount>? stepCountStream;
   @observable
-  late Stream<PedestrianStatus> pedestrianStatusStream;
+  Stream<PedestrianStatus>? pedestrianStatusStream;
   @observable
-  late StreamSubscription listener;
+  StreamSubscription? listener;
   @observable
-  late StreamSubscription pedestrianListener;
+  StreamSubscription? pedestrianListener;
 
   @observable
   String status = '?', steps = '0';
@@ -80,11 +80,11 @@ abstract class PedometerBase with Store {
   @action
   void initPlatformState() {
     pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    pedestrianListener = pedestrianStatusStream.listen(onPedestrianStatusChanged);
-    pedestrianListener.onError(onPedestrianStatusError);
+    pedestrianListener = pedestrianStatusStream!.listen(onPedestrianStatusChanged);
+    pedestrianListener!.onError(onPedestrianStatusError);
     stepCountStream = Pedometer.stepCountStream;
-    listener = stepCountStream.listen(onStepCount);
-    listener.onError(onStepCountError);
+    listener = stepCountStream!.listen(onStepCount);
+    listener!.onError(onStepCountError);
   }
 
   @action
@@ -122,7 +122,7 @@ abstract class PedometerBase with Store {
 
   @action
   void stopTracking() {
-    listener.cancel();
-    pedestrianListener.cancel();
+    listener!.cancel();
+    pedestrianListener!.cancel();
   }
 }

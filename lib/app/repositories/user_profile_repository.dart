@@ -8,6 +8,8 @@ import '../../network_module/api_path.dart';
 import '../../network_module/http_client.dart';
 
 class UserProfileRepository {
+
+
   Future<User> getUserDetails(String email) async {
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
     final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.user_details, concatValue: email), header);

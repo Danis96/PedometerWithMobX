@@ -35,7 +35,7 @@ class DatabaseHelper {
       onCreate: (Database db, int version) async {
         debugPrint('Database created!');
         for (int i = 1; i <= _scripts.length; i++) {
-          for (int j = 0; j <= _scripts.length; j++) {
+          for (int j = 0; j < _scripts[i]!.length; j++) {
             await db.execute(_scripts[i]![j]);
           }
         }
@@ -43,8 +43,9 @@ class DatabaseHelper {
       onUpgrade: (Database db, int oldVersion, int newVersion) async {
         debugPrint('Database upgraded');
         for (int i = oldVersion + 1; i <= newVersion; i++) {
-          for (int j = 0; j <= _scripts.length; i++) {
+          for (int j = 0; j < _scripts[i]!.length; i++) {
             await db.execute(_scripts[i]![j]);
+            debugPrint('Database upgraded with ${_scripts[i]![j].length}');
           }
         }
       },
@@ -83,9 +84,7 @@ const Map<int, List<String>> _scripts = {
               CreatedDate TEXT,
               Distance INTEGER
       )   
-  '''
-  ],
-  2: <String>[
+  ''',
     ''' 
        CREATE TABLE IF NOT EXISTS ${Constants.userTable} (
               Email TEXT PRIMARY KEY,
@@ -100,5 +99,5 @@ const Map<int, List<String>> _scripts = {
               IsOnboardingFinished INTEGER
        )
     '''
-  ]
+  ],
 };

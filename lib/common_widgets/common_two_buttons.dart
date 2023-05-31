@@ -6,6 +6,7 @@ class FOSTwoButtons extends StatelessWidget {
   const FOSTwoButtons({
     this.leftBtnText = '',
     this.rightBtnText = '',
+    this.widgetKey = const Key('placeholder'),
     this.rightBtnType = BtnType.green,
     required this.leftBtnFunction,
     required this.rightBtnFunction,
@@ -13,6 +14,7 @@ class FOSTwoButtons extends StatelessWidget {
   });
 
   final String leftBtnText;
+  final Key widgetKey;
   final Color leftBtnTextColor;
   final String rightBtnText;
   final Function? leftBtnFunction;
@@ -22,6 +24,7 @@ class FOSTwoButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: widgetKey,
       color: Colors.transparent,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       width: double.infinity,

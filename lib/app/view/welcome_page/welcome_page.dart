@@ -21,6 +21,7 @@ Widget _buildBody(BuildContext context) {
 
 Widget _buildHeadlineImgAndText(BuildContext context) {
   return Padding(
+
     padding: const EdgeInsets.symmetric(horizontal: 24),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
