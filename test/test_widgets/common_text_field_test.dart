@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ljubljana/common_widgets/common_text_field.dart';
 
-import 'widget_test_helper.dart';
+import '../test_helper.dart';
 
 void main() {
   const Key key = Key('fos_text_field_key');

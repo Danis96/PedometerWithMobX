@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ljubljana/common_widgets/common_button.dart';
 
-import 'widget_test_helper.dart';
+import '../test_helper.dart';
 
 void main() {
   Widget fosBtn = FOSButton(

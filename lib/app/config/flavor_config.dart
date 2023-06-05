@@ -35,4 +35,5 @@ class FlavorConfig {
 
   static bool isProduction() => _instance?.flavor == Flavor.PRODUCTION;
   static bool isDevelopment() => _instance?.flavor == Flavor.DEV;
+  static String returnBaseUrl() => _instance!.values.baseUrl;
 }

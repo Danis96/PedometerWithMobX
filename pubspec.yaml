@@ -61,6 +61,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   mobx_codegen: ^2.0.2
   flutter_mobx: ^2.0.6+5
+  nock: ^1.2.2
 
 dev_dependencies:
   flutter_test:
