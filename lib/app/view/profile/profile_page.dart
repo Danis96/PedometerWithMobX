@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      FOSLoaderCircleWhite(context: context);
+      fOSLoaderCircleWhite(context: context);
       _getInitialData().then((value) {
         Navigator.of(context).pop();
         setState(() {});
@@ -84,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget _buildImgProfile(BuildContext context) {
     return GestureDetector(
         onTap: () async {
-          FOSSimpleDialog(
+          fOSSimpleDialog(
             context,
             title: 'Edit photo',
             content: 'Please add/remove the photo',
@@ -316,7 +316,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget _buildBottomButton(BuildContext context) {
     void showSuccessModal(BuildContext context) {
-      FOSSimpleDialog(context,
+      fOSSimpleDialog(context,
           title: 'change_pass.success'.tr(),
           content: 'profile.success_data_changed'.tr(),
           buttonText: 'Ok',
@@ -329,7 +329,7 @@ class _ProfilePageState extends State<ProfilePage> {
       height: 100,
       child: FOSButton(
           onPressed: () {
-            FOSLoaderCircleWhite(context: context);
+            fOSLoaderCircleWhite(context: context);
             authStore.editUserData().then((String? error) {
               Navigator.of(context).pop();
               ModalHelper().returnErrorModalOrFn(context, error, function: () => showSuccessModal(context));

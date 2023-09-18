@@ -153,11 +153,8 @@ class HTTPClient {
   }
 
   String queryParameters(Map<String, dynamic> params) {
-    if (params != null) {
-      final Uri jsonString = Uri(queryParameters: params);
-      return '?${jsonString.query}';
-    }
-    return '';
+    final Uri jsonString = Uri(queryParameters: params);
+    return '?${jsonString.query}';
   }
 
   dynamic _returnResponse(http.Response response) async {

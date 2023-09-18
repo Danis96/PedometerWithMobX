@@ -41,7 +41,7 @@ class ApiHeaderHelper {
       case ApiHeader.appJson:
         return <String, String>{HttpHeaders.contentTypeHeader: 'application/json; charset=utf-8'};
       case ApiHeader.authAppJson:
-        final String token = await storagePrefs.getValue(StoragePrefsManager.ACCESS_TOKEN);
+        final String token = await storagePrefs.getValue(StoragePrefsManager.accessToken);
         print('TOKENN: $token');
         return <String, String>{
           HttpHeaders.authorizationHeader: 'Bearer $token',

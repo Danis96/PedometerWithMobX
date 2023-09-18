@@ -70,7 +70,7 @@ abstract class AuthBase with Store {
     if (emailLoginController.text.isNotEmpty && passwordLoginController.text.isNotEmpty) {
       try {
         final String response = await _authRepository!.loginUser(emailLoginController.text, passwordLoginController.text);
-        await storagePrefs.setValue(StoragePrefsManager.ACCESS_TOKEN, response);
+        await storagePrefs.setValue(StoragePrefsManager.accessToken, response);
         await storagePrefs.setEmailInShared(emailLoginController.text);
         return null;
       } catch (e) {
@@ -89,7 +89,7 @@ abstract class AuthBase with Store {
       await _dbUserRepository!.deleteUserTable();
       await insertUserInDatabase(apiUserData);
       _user = apiUserData;
-      await storagePrefs.setValue(StoragePrefsManager.USER_DATA_KEY, json.encode(_user.toJson()));
+      await storagePrefs.setValue(StoragePrefsManager.userDataKey, json.encode(_user.toJson()));
       await setIsUserFinishedOnBoarding();
       setUserDataToControllers();
       return null;
@@ -134,9 +134,9 @@ abstract class AuthBase with Store {
   @action
   Future setIsUserFinishedOnBoarding() async {
     if (_user.isOnBoardingFinished) {
-      await storagePrefs.setValue(StoragePrefsManager.FINISHED_ONBOARDING, 'true');
+      await storagePrefs.setValue(StoragePrefsManager.finishedOnBoarding, 'true');
     } else {
-      await storagePrefs.setValue(StoragePrefsManager.FINISHED_ONBOARDING, 'false');
+      await storagePrefs.setValue(StoragePrefsManager.finishedOnBoarding, 'false');
     }
   }
 

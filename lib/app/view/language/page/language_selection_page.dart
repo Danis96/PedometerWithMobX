@@ -10,10 +10,10 @@ class LanguageSelectionPage extends StatefulWidget {
   const LanguageSelectionPage({Key? key}) : super(key: key);
 
   @override
-  _LanguageSelectionPageState createState() => _LanguageSelectionPageState();
+  LanguageSelectionPageState createState() => LanguageSelectionPageState();
 }
 
-class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
+class LanguageSelectionPageState extends State<LanguageSelectionPage> {
   final ScrollController scrollController = ScrollController();
 
   @override

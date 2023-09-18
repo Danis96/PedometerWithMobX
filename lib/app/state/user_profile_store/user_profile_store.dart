@@ -58,7 +58,7 @@ abstract class UserProfileBase with Store {
     final img.Image? capturedImage = img.decodeImage(await File(pickedFile!.path).readAsBytes());
     final img.Image orientedImage = img.bakeOrientation(capturedImage!);
     imageFile = await File(pickedFile.path).writeAsBytes(img.encodeJpg(orientedImage));
-    FOSLoaderCircleWhite(context: context);
+    fOSLoaderCircleWhite(context: context);
     try {
       final String email = await storagePrefs.readEmailFromShared();
       if (imageFile != null) {
@@ -87,7 +87,7 @@ abstract class UserProfileBase with Store {
   @action
   Future<String?> deletePhoto(BuildContext context) async {
     try {
-      FOSLoaderCircleWhite(context: context);
+      fOSLoaderCircleWhite(context: context);
       final String email = await storagePrefs.readEmailFromShared();
       await _profileRepository!.deletePhoto(email);
       userPhoto = null;
@@ -102,7 +102,7 @@ abstract class UserProfileBase with Store {
   @action
   Future<String?> getTopDistances(String email) async {
     try {
-      final List<DistanceModel> apiTopDistance = await _dbDistanceRepository!.fetchTopDistances();
+      final List<DistanceModel> apiTopDistance = await _distanceRepository!.getUserTopDistances(email);
       await _dbDistanceRepository!.deleteTopDistanceTable();
       await insertTopDistanceIntoDB(apiTopDistance);
       topDistances = apiTopDistance;

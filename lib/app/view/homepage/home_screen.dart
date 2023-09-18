@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     _tooltipBehavior = TooltipBehavior(enable: true);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      FOSLoaderCircleWhite(context: context);
+      fOSLoaderCircleWhite(context: context);
       _getInitialData().then((value) {
         Navigator.of(context).pop();
       });

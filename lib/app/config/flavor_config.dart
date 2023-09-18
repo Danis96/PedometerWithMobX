@@ -1,7 +1,7 @@
 
 enum Flavor {
-  DEV,
-  PRODUCTION,
+  dev,
+  production,
 }
 
 class FlavorValues {
@@ -33,7 +33,7 @@ class FlavorConfig {
     return _instance!;
   }
 
-  static bool isProduction() => _instance?.flavor == Flavor.PRODUCTION;
-  static bool isDevelopment() => _instance?.flavor == Flavor.DEV;
+  static bool isProduction() => _instance?.flavor == Flavor.production;
+  static bool isDevelopment() => _instance?.flavor == Flavor.dev;
   static String returnBaseUrl() => _instance!.values.baseUrl;
 }

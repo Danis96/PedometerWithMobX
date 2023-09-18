@@ -1,0 +1,84 @@
+{"protocolVersion":"0.1.1","runnerVersion":"1.24.1","pid":57184,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"/Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading /Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":2}
+{"suite":{"id":2,"platform":"vm","path":"/Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_text_field_test.dart"},"type":"suite","time":8}
+{"test":{"id":3,"name":"loading /Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_text_field_test.dart","suiteID":2,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":9}
+{"suite":{"id":4,"platform":"vm","path":"/Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_btn_test.dart"},"type":"suite","time":10}
+{"test":{"id":5,"name":"loading /Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_btn_test.dart","suiteID":4,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":10}
+{"suite":{"id":6,"platform":"vm","path":"/Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_two_btn_test.dart"},"type":"suite","time":10}
+{"test":{"id":7,"name":"loading /Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_two_btn_test.dart","suiteID":6,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":10}
+{"suite":{"id":8,"platform":"vm","path":"/Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_tappable_text_test.dart"},"type":"suite","time":13}
+{"test":{"id":9,"name":"loading /Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_tappable_text_test.dart","suiteID":8,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":13}
+{"count":5,"time":13,"type":"allSuites"}
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":"http://127.0.0.1:54670/rpuP6cSYv-U=/","observatoryUri":"http://127.0.0.1:54670/rpuP6cSYv-U=/"}}]
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":"http://127.0.0.1:54673/xqCgGGU2uXg=/","observatoryUri":"http://127.0.0.1:54673/xqCgGGU2uXg=/"}}]
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":"http://127.0.0.1:54672/X0RKT2ovE_U=/","observatoryUri":"http://127.0.0.1:54672/X0RKT2ovE_U=/"}}]
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":"http://127.0.0.1:54677/coej_SxcuPQ=/","observatoryUri":"http://127.0.0.1:54677/coej_SxcuPQ=/"}}]
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":"http://127.0.0.1:54678/VxmVDSi9Guc=/","observatoryUri":"http://127.0.0.1:54678/VxmVDSi9Guc=/"}}]
+{"testID":5,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":5287}
+{"group":{"id":10,"suiteID":4,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":5293}
+{"test":{"id":11,"name":"Is FOSButton visible on the ui","suiteID":4,"groupIDs":[10],"metadata":{"skip":false,"skipReason":null},"line":153,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":18,"root_column":3,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_btn_test.dart"},"type":"testStart","time":5294}
+{"testID":3,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":5358}
+{"group":{"id":12,"suiteID":2,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":5360}
+{"test":{"id":13,"name":"Is FOSTextFormField visible on the ui","suiteID":2,"groupIDs":[12],"metadata":{"skip":false,"skipReason":null},"line":153,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":22,"root_column":3,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_text_field_test.dart"},"type":"testStart","time":5360}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":5368}
+{"group":{"id":14,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":5369}
+{"test":{"id":15,"name":"User login successfully","suiteID":0,"groupIDs":[14],"metadata":{"skip":false,"skipReason":null},"line":153,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":10,"root_column":3,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart"},"type":"testStart","time":5369}
+{"testID":7,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":5437}
+{"group":{"id":16,"suiteID":6,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":5437}
+{"test":{"id":17,"name":"Is FOSTwoButtons visible on the ui","suiteID":6,"groupIDs":[16],"metadata":{"skip":false,"skipReason":null},"line":153,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":22,"root_column":3,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_two_btn_test.dart"},"type":"testStart","time":5437}
+{"testID":9,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":5444}
+{"group":{"id":18,"suiteID":8,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":null},"type":"group","time":5445}
+{"test":{"id":19,"name":"Is FOSTappableText visible on the ui","suiteID":8,"groupIDs":[18],"metadata":{"skip":false,"skipReason":null},"line":153,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":18,"root_column":3,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/widget_tests/common_tappable_text_test.dart"},"type":"testStart","time":5445}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Localization initialized\u001b[0m","type":"print","time":5743}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Start\u001b[0m","type":"print","time":5745}
+{"testID":11,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6452}
+{"testID":19,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6566}
+{"testID":17,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6652}
+{"testID":13,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6736}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Init state\u001b[0m","type":"print","time":7329}
+{"testID":15,"messageType":"print","message":"\u001b[32m[🌎 Easy Localization] [INFO] Start locale loaded en_US\u001b[0m","type":"print","time":7442}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Build\u001b[0m","type":"print","time":7470}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate\u001b[0m","type":"print","time":7470}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Init provider\u001b[0m","type":"print","time":7470}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Load Localization Delegate\u001b[0m","type":"print","time":7471}
+{"testID":15,"messageType":"print","message":"\u001b[90m[🌎 Easy Localization] [DEBUG] Load asset from assets/translations\u001b[0m","type":"print","time":7471}
+{"testID":15,"messageType":"print","message":"══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"The following TestFailure was thrown running a test:","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"Expected: exactly one matching node in the widget tree","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"  Actual: _KeyFinder:<zero widgets with key [<'danis_test'>] (ignoring offstage widgets)>","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"   Which: means none were found but one was expected","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"When the exception was thrown, this was the stack:","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"#4      main.<anonymous closure> (file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart:18:5)","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"<asynchronous suspension>","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"<asynchronous suspension>","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"(elided one frame from package:stack_trace)","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"This was caught by the test expectation on the following line:","type":"print","time":8096}
+{"testID":15,"messageType":"print","message":"  file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart line 18","type":"print","time":8097}
+{"testID":15,"messageType":"print","message":"The test description was:","type":"print","time":8097}
+{"testID":15,"messageType":"print","message":"  User login successfully","type":"print","time":8097}
+{"testID":15,"messageType":"print","message":"════════════════════════════════════════════════════════════════════════════════════════════════════","type":"print","time":8097}
+{"testID":15,"error":"Test failed. See exception logs above.\nThe test description was: User login successfully","stackTrace":"","isFailure":false,"type":"error","time":8099}
+{"testID":15,"result":"error","skipped":false,"hidden":false,"type":"testDone","time":8099}
+{"test":{"id":20,"name":"(tearDownAll)","suiteID":0,"groupIDs":[14],"metadata":{"skip":false,"skipReason":null},"line":42,"column":5,"url":"package:integration_test/integration_test.dart","root_line":8,"root_column":40,"root_url":"file:///Users/danispreldzic/Desktop/PedometerWithMobX/test/integration_tests/login/user_login_successfully_test.dart"},"type":"testStart","time":8101}
+{"testID":20,"messageType":"print","message":"Warning: integration_test plugin was not detected.","type":"print","time":8138}
+{"testID":20,"messageType":"print","message":"","type":"print","time":8138}
+{"testID":20,"messageType":"print","message":"If you're running the tests with `flutter drive`, please make sure your tests","type":"print","time":8138}
+{"testID":20,"messageType":"print","message":"are in the `integration_test/` directory of your package and use","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"`flutter test $path_to_test` to run it instead.","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"If you're running the tests with Android instrumentation or XCTest, this means","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"that you are not capturing test results properly! See the following link for","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"how to set up the integration_test plugin:","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"https://flutter.dev/docs/testing/integration-tests#testing-on-firebase-test-lab","type":"print","time":8139}
+{"testID":20,"messageType":"print","message":"","type":"print","time":8139}
+{"testID":20,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":8140}
+{"success":false,"type":"done","time":8812}

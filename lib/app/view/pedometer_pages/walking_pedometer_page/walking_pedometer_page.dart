@@ -72,7 +72,7 @@ class _WalkingPedometerPageState extends State<WalkingPedometerPage> {
   }
 
   Widget _buildDistanceStepsPlaceholders(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,11 +134,7 @@ class _WalkingPedometerPageState extends State<WalkingPedometerPage> {
     } else {
       int distance = int.tryParse(distanceController.text)!;
       int steps = int.tryParse(stepsController.text)!;
-      if (distance != null && steps != null) {
-        return (distance / steps).toStringAsFixed(3) + 'm';
-      }
-
-      return '-';
+      return '${(distance / steps).toStringAsFixed(3)} m';
     }
   }
 

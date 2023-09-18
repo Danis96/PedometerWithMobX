@@ -41,8 +41,6 @@ abstract class QuestionBase with Store {
 
 
 
-  /// todo check if need action outside
-  // @action
   Future<String?> answerQuestion() async {
     try {
       final String email = await storagePrefs.readEmailFromShared();

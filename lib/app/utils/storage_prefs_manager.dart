@@ -4,36 +4,36 @@ import 'package:shared_preferences/shared_preferences.dart';
 final StoragePrefsManager storagePrefs = StoragePrefsManager();
 
 class StoragePrefsManager {
-  late SharedPreferences _shared_pref_instance;
-  late FlutterSecureStorage _storage_instance;
+  late SharedPreferences sharedPrefInstance;
+  late FlutterSecureStorage storageInstance;
 
   Future<void> init() async {
-    _shared_pref_instance = await SharedPreferences.getInstance();
-    _storage_instance = const FlutterSecureStorage();
+    sharedPrefInstance = await SharedPreferences.getInstance();
+    storageInstance = const FlutterSecureStorage();
   }
 
   //Secure Storage
-  static const String USER_DATA_KEY = 'userData';
-  static const String ACCESS_TOKEN = 'accessToken';
-  static const String FIRST_RUN = 'firstRun';
-  static const String FINISHED_ONBOARDING = 'finishedOnboarding';
+  static const String userDataKey = 'userData';
+  static const String accessToken = 'accessToken';
+  static const String firstRun = 'firstRun';
+  static const String finishedOnBoarding = 'finishedOnboarding';
 
   Future<void> setValue(String key, String value) async {
     const IOSOptions options = IOSOptions(accessibility: KeychainAccessibility.first_unlock);
-    await _storage_instance.write(key: key, value: value, iOptions: options);
+    await storageInstance.write(key: key, value: value, iOptions: options);
   }
 
   Future<String> getValue(String key) async {
-    final String? result = await _storage_instance.read(key: key);
+    final String? result = await storageInstance.read(key: key);
     return result ?? '';
   }
 
   Future<void> deleteAll() async {
-    await _storage_instance.deleteAll();
+    await storageInstance.deleteAll();
   }
 
   Future<void> deleteForKey(String key) async {
-    await _storage_instance.delete(key: key);
+    await storageInstance.delete(key: key);
   }
 
   Future<void> setEmailInShared(String email) async {
@@ -49,15 +49,15 @@ class StoragePrefsManager {
 
   Future<void> setLanguage(String language) async {
     if( !['si', 'en'].contains(language)) {
-      await _shared_pref_instance.setString('language_code', 'si');
+      await sharedPrefInstance.setString('language_code', 'si');
       return;
     }
 
-    await _shared_pref_instance.setString('language_code', language);
+    await sharedPrefInstance.setString('language_code', language);
   }
 
   Future<String> getLanguage() async {
-    String? languageCode = _shared_pref_instance.getString('language_code');
+    String? languageCode = sharedPrefInstance.getString('language_code');
     return languageCode ?? 'si';
   }
 

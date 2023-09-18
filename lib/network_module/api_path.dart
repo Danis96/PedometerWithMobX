@@ -1,20 +1,20 @@
 enum ApiPath {
-  login_user,
-  check_email,
-  create_password,
-  create_user_details,
-  delete_token,
-  answer_questions,
-  user_details,
-  reset_code,
-  reset_password,
-  change_password,
-  edit_profile,
-  delete_profile,
-  get_photo,
-  delete_photo,
-  upload_photo,
-  get_municipalities,
+  loginUser,
+  checkEmail,
+  createPassword,
+  createUserDetails,
+  deleteToken,
+  answerQuestions,
+  userDetails,
+  resetCode,
+  resetPassword,
+  changePassword,
+  editProfile,
+  deleteProfile,
+  getPhoto,
+  deletePhoto,
+  uploadPhoto,
+  getMunicipalities,
   setDistance,
   getDistances,
   getTopDistances,
@@ -24,37 +24,37 @@ enum ApiPath {
 class ApiPathHelper {
   static String getValue(ApiPath path, {String concatValue = '', String secondConcatValue = '', String thirdConcatValue = ''}) {
     switch (path) {
-      case ApiPath.login_user:
+      case ApiPath.loginUser:
         return 'api/account/Login';
-      case ApiPath.check_email:
+      case ApiPath.checkEmail:
         return 'api/account/CheckEmail?email=$concatValue';
-      case ApiPath.create_password:
+      case ApiPath.createPassword:
         return 'api/account/CreatePassword';
-      case ApiPath.create_user_details:
+      case ApiPath.createUserDetails:
         return 'api/account/CreateUserDetail';
-      case ApiPath.delete_token:
+      case ApiPath.deleteToken:
         return 'api/account/DeleteToken?email=$concatValue';
-      case ApiPath.answer_questions:
+      case ApiPath.answerQuestions:
         return 'api/questions/answer';
-      case ApiPath.user_details:
+      case ApiPath.userDetails:
         return 'api/account/GetUserDetails?email=$concatValue';
-      case ApiPath.reset_code:
+      case ApiPath.resetCode:
         return 'api/account/GenerateResetCode';
-      case ApiPath.reset_password:
+      case ApiPath.resetPassword:
         return 'api/account/ResetPassword';
-      case ApiPath.change_password:
+      case ApiPath.changePassword:
         return 'api/account/ChangePassword';
-      case ApiPath.edit_profile:
+      case ApiPath.editProfile:
         return 'api/account/EditProfile';
-      case ApiPath.delete_profile:
+      case ApiPath.deleteProfile:
         return 'api/account/DeleteAccount?email=$concatValue';
-      case ApiPath.get_photo:
+      case ApiPath.getPhoto:
         return 'api/account/GetPhoto?email=$concatValue';
-      case ApiPath.delete_photo:
+      case ApiPath.deletePhoto:
         return 'api/account/RemovePhoto?email=$concatValue';
-      case ApiPath.upload_photo:
+      case ApiPath.uploadPhoto:
         return 'api/account/UploadPhoto';
-      case ApiPath.get_municipalities:
+      case ApiPath.getMunicipalities:
         return 'api/municipality/GetMunicipalities';
       case ApiPath.setDistance:
         return 'api/distances/SetDistance';

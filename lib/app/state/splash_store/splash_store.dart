@@ -4,9 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../routing/routes.dart';
 import '../../locator.dart';
-import '../../models/user_model.dart';
 import '../../repositories/navigation_repo.dart';
-import '../../repositories/user_profile_repository.dart';
 import '../../utils/storage_prefs_manager.dart';
 import '../authentication_store/authentication_store.dart';
 
@@ -30,7 +28,7 @@ abstract class SplashBase with Store {
     }
     String userData = '';
     try {
-      userData = await storagePrefs.getValue(StoragePrefsManager.USER_DATA_KEY);
+      userData = await storagePrefs.getValue(StoragePrefsManager.userDataKey);
     } on PlatformException catch (e) {
       await storagePrefs.deleteAll();
     }

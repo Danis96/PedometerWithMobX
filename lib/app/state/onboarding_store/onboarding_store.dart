@@ -38,7 +38,7 @@ abstract class OnBoardingBase with Store {
   String email = '';
   List<String> genderItems = ['gender_items.male'.tr(), 'gender_items.female'.tr()];
 
-  bool _areControllersNotEmpty() =>
+  bool areControllersNotEmpty() =>
       fNameController.text.isNotEmpty &&
       lNameController.text.isNotEmpty &&
       genderController.text.isNotEmpty &&
@@ -49,7 +49,7 @@ abstract class OnBoardingBase with Store {
 
   @action
   Future<String?> onBoarding() async {
-    if (_areControllersNotEmpty()) {
+    if (areControllersNotEmpty()) {
       await setAndConvertValues();
       try {
         await _boardingRepository!.createUserDetails(
@@ -64,8 +64,10 @@ abstract class OnBoardingBase with Store {
   }
 
   @action
-  Future<void> setAndConvertValues() async {
-    email = await storagePrefs.readEmailFromShared();
+  Future<void> setAndConvertValues({bool shouldCallStorage = true}) async {
+    if(shouldCallStorage) {
+      email = await storagePrefs.readEmailFromShared();
+    }
     convertGenderToInt(genderController.text);
     age = ageController.text.isNotEmpty
         ? isOnlyNumbers(ageController.text)
@@ -105,7 +107,6 @@ abstract class OnBoardingBase with Store {
       return true;
     }
   }
-
 
   @observable
   List<String> municipalities = <String>[];

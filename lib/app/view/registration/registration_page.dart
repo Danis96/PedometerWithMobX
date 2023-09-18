@@ -106,7 +106,7 @@ class RegistrationPage extends StatelessWidget {
       child: FOSButton(
         onPressed: () {
           if (auth.agreeTerms) {
-            FOSLoaderCircleWhite(context: context);
+            fOSLoaderCircleWhite(context: context);
             auth.checkEmailExists().then((String? error) {
               Navigator.of(context).pop();
               final String? emailValid = auth.emailValid(auth.emailRegistrationController.text);

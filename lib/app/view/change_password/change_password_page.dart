@@ -97,7 +97,7 @@ class ChangePasswordPage extends StatelessWidget {
 
   Widget _buildBottomButton(BuildContext context) {
     void showSuccessModal(BuildContext context) {
-      FOSSimpleDialog(context,
+      fOSSimpleDialog(context,
           title: 'change_pass.success'.tr(),
           content: 'change_pass.modal_body'.tr(),
           buttonText: 'Ok',

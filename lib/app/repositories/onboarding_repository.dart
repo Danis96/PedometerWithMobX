@@ -18,6 +18,6 @@ class OnBoardingRepository {
       'IsOnboardingFinished': onBoardingFinished
     };
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final dynamic response = await HTTPClient.instance.postData(ApiPathHelper.getValue(ApiPath.create_user_details), header, body: object);
+    final dynamic response = await HTTPClient.instance.postData(ApiPathHelper.getValue(ApiPath.createUserDetails), header, body: object);
   }
 }

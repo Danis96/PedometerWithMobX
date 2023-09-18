@@ -29,7 +29,7 @@ Future<void> showMyDialog({
   );
 }
 
-Future<void> FOSLoaderCircleWhite({@required BuildContext? context}) {
+Future<void> fOSLoaderCircleWhite({@required BuildContext? context}) {
   return showMyDialog(
     msg: '',
     action: const SizedBox(),
@@ -43,7 +43,7 @@ Future<void> FOSLoaderCircleWhite({@required BuildContext? context}) {
 }
 
 void openLogoutPopup(BuildContext context, Function function) {
-  FOSSimpleDialog(
+  fOSSimpleDialog(
     context,
     title: 'logout.title'.tr(),
     content: 'logout.body'.tr(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ljubljana/common_widgets/common_button.dart';
 
-void FOSSimpleDialog(
+void fOSSimpleDialog(
   BuildContext context, {
   String title = '',
   String content = '',

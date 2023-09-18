@@ -10,6 +10,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('danis_test'),
         decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/orange_background.png'), fit: BoxFit.cover)),
         child: Scaffold(body: _buildBody(context), bottomNavigationBar: _buildBottomButton(context)));
   }
@@ -21,7 +22,6 @@ Widget _buildBody(BuildContext context) {
 
 Widget _buildHeadlineImgAndText(BuildContext context) {
   return Padding(
-
     padding: const EdgeInsets.symmetric(horizontal: 24),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -47,6 +47,9 @@ Widget _buildBottomButton(BuildContext context) {
     padding: const EdgeInsets.symmetric(vertical: 40),
     height: 140,
     alignment: Alignment.bottomCenter,
-    child: FOSButton(onPressed: () => Navigator.of(context).pushNamed(registrationScreen), buttonTitle: 'welcome.start'.tr()),
+    child: FOSButton(
+        widgetKey: const Key('welcome_page_button'),
+        onPressed: () => Navigator.of(context).pushNamed(registrationScreen),
+        buttonTitle: 'welcome.start'.tr()),
   );
 }

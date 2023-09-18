@@ -132,13 +132,13 @@ class _SettingsPageState extends State<SettingsPage> {
         height: 100,
         child: GestureDetector(
           onTap: () {
-            FOSSimpleDialog(
+            fOSSimpleDialog(
               context,
               title: 'settings.delete_modal'.tr(),
               content: 'settings.delete_modal_body'.tr(),
               buttonText: 'settings.delete_acc'.tr(),
               onButtonPressed: () {
-                FOSLoaderCircleWhite(context: context);
+                fOSLoaderCircleWhite(context: context);
                 authStore.deleteProfile().then((String? error) {
                   ModalHelper().returnErrorModalOrFn(context, error,
                       function: () => Navigator.pushNamedAndRemoveUntil(context, welcomeScreen, (route) => false));

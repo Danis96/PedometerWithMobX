@@ -37,9 +37,9 @@ mixin _$OnBoardingStore on OnBoardingBase, Store {
       AsyncAction('OnBoardingBase.setAndConvertValues', context: context);
 
   @override
-  Future<void> setAndConvertValues() {
-    return _$setAndConvertValuesAsyncAction
-        .run(() => super.setAndConvertValues());
+  Future<void> setAndConvertValues({bool shouldCallStorage = true}) {
+    return _$setAndConvertValuesAsyncAction.run(
+        () => super.setAndConvertValues(shouldCallStorage: shouldCallStorage));
   }
 
   late final _$getMunicipalitiesAsyncAction =

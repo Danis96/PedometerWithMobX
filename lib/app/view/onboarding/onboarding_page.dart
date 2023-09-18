@@ -26,7 +26,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      FOSLoaderCircleWhite(context: context);
+      fOSLoaderCircleWhite(context: context);
       _getInitialData().then((value) {
         Navigator.of(context).pop();
       });

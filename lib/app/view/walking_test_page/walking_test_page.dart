@@ -295,7 +295,7 @@ class _WalkingTestPageState extends State<WalkingTestPage> {
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.black.color, fontWeight: FontWeight.w300),
                 children: <TextSpan>[
                   TextSpan(
-                      text: locationStore.distanceTraveled.toStringAsFixed(2) + 'm',
+                      text: '${locationStore.distanceTraveled.toStringAsFixed(2)} m',
                       style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.black.color))
                 ])));
   }

@@ -27,7 +27,7 @@ class FOSTappableText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<TextSpan> _generateContent() {
+    List<TextSpan> generateContent() {
       if (links!.isEmpty) {
         return <TextSpan>[
           TextSpan(text: text),
@@ -68,7 +68,7 @@ class FOSTappableText extends StatelessWidget {
       key: widgetKey,
       text: TextSpan(
         style: defaultStyle,
-        children: _generateContent(),
+        children: generateContent(),
       ),
       textAlign: textAlign,
     );

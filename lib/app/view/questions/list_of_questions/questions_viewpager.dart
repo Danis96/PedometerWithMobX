@@ -110,7 +110,7 @@ class _QuestionsViewPagerState extends State<QuestionsViewPager> {
       store.pageController.animateToPage(++store.currentPage, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
     } else {
       store.questions[store.currentPage].isConfirmed = isConfirmed;
-      FOSLoaderCircleWhite(context: context);
+      fOSLoaderCircleWhite(context: context);
       Future.delayed(const Duration(milliseconds: 1000), () async {
         await widget.onBoardingStore.onBoarding().then((String? error) {
           Navigator.of(context).pop();

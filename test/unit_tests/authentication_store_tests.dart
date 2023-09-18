@@ -111,7 +111,7 @@ void main() {
     final dynamic object = <String, String>{'email': 'test@test.com', 'password': 'password'};
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.login_user), object)..reply(200, response, headers: header);
+    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.loginUser), object)..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -121,7 +121,7 @@ void main() {
     const String email = 'test@test.com';
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.get(ApiPathHelper.getValue(ApiPath.check_email, concatValue: email))..reply(200, response, headers: header);
+    final interceptor = nock.get(ApiPathHelper.getValue(ApiPath.checkEmail, concatValue: email))..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -131,7 +131,7 @@ void main() {
     const String email = 'test@test.com';
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.delete(ApiPathHelper.getValue(ApiPath.delete_token, concatValue: email))..reply(200, response, headers: header);
+    final interceptor = nock.delete(ApiPathHelper.getValue(ApiPath.deleteToken, concatValue: email))..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -141,7 +141,7 @@ void main() {
     final dynamic object = <String, String>{'Email': 'test@test.com'};
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.reset_code), object)..reply(200, response, headers: header);
+    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.resetCode), object)..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -151,7 +151,7 @@ void main() {
     final dynamic object = <String, String>{'Email': 'test@test.com', "Code": '123456', "NewPassword": 'newPassword'};
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.reset_password), object)..reply(200, response, headers: header);
+    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.resetPassword), object)..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -161,7 +161,7 @@ void main() {
     final dynamic object = <String, String>{'Email': 'test@test.com', "OldPassword": 'oldPassword', "NewPassword": 'newPassword'};
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.change_password), object)..reply(200, response, headers: header);
+    final interceptor = nock.post(ApiPathHelper.getValue(ApiPath.changePassword), object)..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);
@@ -171,7 +171,7 @@ void main() {
     const String email = 'test@test.com';
     final dynamic response = <String, String>{'success': 'success'};
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.appJson);
-    final interceptor = nock.delete(ApiPathHelper.getValue(ApiPath.delete_profile, concatValue: email))..reply(200, response, headers: header);
+    final interceptor = nock.delete(ApiPathHelper.getValue(ApiPath.deleteProfile, concatValue: email))..reply(200, response, headers: header);
     expect(interceptor.isDone, false);
     expect(interceptor.body, response);
     expect(interceptor.statusCode, 200);

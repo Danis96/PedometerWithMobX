@@ -77,7 +77,7 @@ class ForgotSetPasswordPage extends StatelessWidget {
       height: 100,
       child: FOSButton(
         onPressed: () {
-          FOSLoaderCircleWhite(context: context);
+          fOSLoaderCircleWhite(context: context);
           final String? passCharLengthValidation = authStore.passMinCarValidation(authStore.confirmPasswordFPController.text);
           final String? arePasswordsSame = authStore.passConfirmValidation(authStore.passwordFPController, authStore.confirmPasswordFPController);
           if (passCharLengthValidation != null) {

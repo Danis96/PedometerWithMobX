@@ -247,7 +247,7 @@ class _WalkingPedometerTestPageState extends State<WalkingPedometerTestPage> {
         child: Text(
       getMotivationText(minutes, seconds),
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
+      style: const TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
     ).tr());
   }
 
@@ -283,7 +283,7 @@ class _WalkingPedometerTestPageState extends State<WalkingPedometerTestPage> {
                 text: 'agreement_test.current_distance'.tr(),
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.black.color, fontWeight: FontWeight.w300),
                 children: <TextSpan>[
-                  TextSpan(text: widget.store.steps + 'm', style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.black.color))
+                  TextSpan(text: '${widget.store.steps} m', style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.black.color))
                 ])));
   }
 }

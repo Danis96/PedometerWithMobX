@@ -55,10 +55,10 @@ class FOSTextFormField extends StatefulWidget {
   final Color fillColor;
 
   @override
-  _FOSTextFormField createState() => _FOSTextFormField();
+  FOSTextFormFieldState createState() => FOSTextFormFieldState();
 }
 
-class _FOSTextFormField extends State<FOSTextFormField> {
+class FOSTextFormFieldState extends State<FOSTextFormField> {
   bool filled = true;
   bool _obscure = true;
 

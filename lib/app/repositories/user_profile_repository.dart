@@ -12,12 +12,12 @@ class UserProfileRepository {
 
   Future<User> getUserDetails(String email) async {
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
-    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.user_details, concatValue: email), header);
-    User _user = User();
+    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.userDetails, concatValue: email), header);
+    User user = User();
     if (response != null) {
-      _user = User.fromJson(response['success']['details']);
+      user = User.fromJson(response['success']['details']);
     }
-    return _user;
+    return user;
   }
 
   Future<void> editUserDetails(String fName, String lName, String email, int gender, int age, int height, int weight, String info,
@@ -35,12 +35,12 @@ class UserProfileRepository {
       'IsOnboardingFinished': onBoardingFinished
     };
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
-    await HTTPClient.instance.postData(ApiPathHelper.getValue(ApiPath.edit_profile), header, body: object);
+    await HTTPClient.instance.postData(ApiPathHelper.getValue(ApiPath.editProfile), header, body: object);
   }
 
   Future<String> getPhoto(String email) async {
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
-    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.get_photo, concatValue: email), header);
+    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.getPhoto, concatValue: email), header);
     final String photoUrl = response['success']['image'];
     print('object');
     return photoUrl;
@@ -48,7 +48,7 @@ class UserProfileRepository {
 
   Future<void> deletePhoto(String email) async {
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
-    final dynamic response = await HTTPClient.instance.deleteData(ApiPathHelper.getValue(ApiPath.delete_photo, concatValue: email), header);
+    final dynamic response = await HTTPClient.instance.deleteData(ApiPathHelper.getValue(ApiPath.deletePhoto, concatValue: email), header);
     print('object');
   }
 
@@ -57,7 +57,7 @@ class UserProfileRepository {
       'email': email,
     };
     final Map<String, String> header = await ApiHeaderHelper.getValue(ApiHeader.authAppJson);
-    final dynamic response = await HTTPClient.instance.postMultipartData(ApiPathHelper.getValue(ApiPath.upload_photo), object, header, file);
+    final dynamic response = await HTTPClient.instance.postMultipartData(ApiPathHelper.getValue(ApiPath.uploadPhoto), object, header, file);
     print('object');
   }
 }

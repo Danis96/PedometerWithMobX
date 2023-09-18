@@ -82,7 +82,7 @@ class RegistrationPasswordPage extends StatelessWidget {
       height: 100,
       child: FOSButton(
         onPressed: () {
-          FOSLoaderCircleWhite(context: context);
+          fOSLoaderCircleWhite(context: context);
           final String? passCharLengthValidation = auth.passMinCarValidation(auth.passwordRegistrationController.text);
           final String? arePasswordsSame =
               auth.passConfirmValidation(auth.passwordRegistrationController, auth.confirmPasswordRegistrationController);

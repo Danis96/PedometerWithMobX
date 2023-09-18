@@ -7,10 +7,10 @@ import '../../../theme/color_helper.dart';
 
 class SplashPage extends StatefulWidget {
   @override
-  _SplashPageState createState() => _SplashPageState();
+  SplashPageState createState() => SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class SplashPageState extends State<SplashPage> {
   late final SplashStore? store;
 
   @override

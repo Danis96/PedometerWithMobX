@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildBody(BuildContext context) {
     return WillPopScope(
+      key: const Key('login_page_body_key'),
       onWillPop: () async => false,
       child: SizedBox(
         height: double.infinity,
@@ -129,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
         leftBtnTextColor: ColorHelper.orange.color!,
         rightBtnType: BtnType.blue,
         rightBtnFunction: () async {
-          FOSLoaderCircleWhite(context: context);
+          fOSLoaderCircleWhite(context: context);
           final String? emailValid = widget.auth.emailValid(widget.auth.emailLoginController.text);
           final String? passCharLengthValidation = widget.auth.passMinCarValidation(widget.auth.passwordLoginController.text);
           if (emailValid != null) {
