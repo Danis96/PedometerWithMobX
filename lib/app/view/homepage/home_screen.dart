@@ -56,8 +56,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
-      child: Scaffold(appBar: AppBar(backgroundColor: ColorHelper.blue.color, elevation: 0, leading: const SizedBox()), body: _buildBody(context)),
+      decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
+      child: Scaffold(
+          appBar: AppBar(backgroundColor: ColorHelper.blue.color, elevation: 0, leading: const SizedBox()),
+          body: _buildBody(context)),
     );
   }
 
@@ -87,14 +90,16 @@ class _HomePageState extends State<HomePage> {
     return Container(
         height: 400,
         decoration: BoxDecoration(
-            color: ColorHelper.blue.color, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))));
+            color: ColorHelper.blue.color,
+            borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))));
   }
 
   Widget _buildWhiteCoverContainer(BuildContext context) {
     return Container(
       height: 460,
       decoration: const BoxDecoration(
-          color: Colors.transparent, borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))),
+          color: Colors.transparent,
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))),
     );
   }
 
@@ -107,7 +112,8 @@ class _HomePageState extends State<HomePage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('home.hi'.tr(), style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.white.color)),
+              Text('home.hi'.tr(),
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.white.color)),
               Observer(
                 builder: (BuildContext context) {
                   return Text(authStore.user.firstName,
@@ -135,31 +141,34 @@ class _HomePageState extends State<HomePage> {
           Container(
             width: MediaQuery.of(context).size.width / 1.06,
             height: 217,
-            decoration:
-                BoxDecoration(border: Border(left: BorderSide(color: ColorHelper.white.color!), bottom: BorderSide(color: ColorHelper.white.color!))),
+            decoration: BoxDecoration(
+                border: Border(
+                    left: BorderSide(color: ColorHelper.white.color!),
+                    bottom: BorderSide(color: ColorHelper.white.color!))),
             child: SfCartesianChart(
                 onActualRangeChanged: (value) => print(value),
                 tooltipBehavior: _tooltipBehavior,
-                primaryXAxis: CategoryAxis(isVisible: false, maximum: 9),
+                primaryXAxis: const CategoryAxis(isVisible: false, maximum: 9),
                 backgroundColor: Colors.transparent,
                 plotAreaBackgroundColor: Colors.transparent,
                 plotAreaBorderColor: Colors.transparent,
-                series: <ChartSeries<_ChartData, String>>[
-                  ColumnSeries<_ChartData, String>(
-                    enableTooltip: true,
-                    dataLabelSettings: const DataLabelSettings(isVisible: true),
-                    dataSource: data,
-                    xValueMapper: (_ChartData data, _) => data.x,
-                    yValueMapper: (_ChartData data, _) => data.y,
-                    name: 'History data',
-                    color: Colors.white,
-                    isTrackVisible: false,
-                  )
+                series: <CartesianSeries<_ChartData, String>>[
+                  LineSeries<_ChartData, String>(
+                      dataSource: data,
+                      xValueMapper: (_ChartData data, _) => data.x,
+                      yValueMapper: (_ChartData data, _) => data.y,
+                      name: 'History data',
+                      color: Colors.white,
+                      enableTooltip: true,
+                      dataLabelSettings: const DataLabelSettings(isVisible: true))
                 ]),
           ),
           const SizedBox(height: 10),
           Text('home.history_data'.tr(),
-              style: Theme.of(context).textTheme.headline6!.copyWith(color: ColorHelper.white.color, fontWeight: FontWeight.w300))
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(color: ColorHelper.white.color, fontWeight: FontWeight.w300))
         ],
       ),
     );
@@ -225,7 +234,10 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               'home.start_test'.tr(),
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6!.copyWith(fontWeight: FontWeight.w500, fontSize: 20, color: ColorHelper.white.color),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(fontWeight: FontWeight.w500, fontSize: 20, color: ColorHelper.white.color),
             ),
           ),
         ),
@@ -239,7 +251,8 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('home.top_3_res'.tr(), style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.w900)),
+          Text('home.top_3_res'.tr(),
+              style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.w900)),
           _buildTopResults(context),
         ],
       ),
@@ -253,7 +266,8 @@ class _HomePageState extends State<HomePage> {
       itemCount: profileStore.topDistances.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-            padding: const EdgeInsets.symmetric(vertical: 5), child: _resultCard(context, index, profileStore.topDistances[index].distance));
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            child: _resultCard(context, index, profileStore.topDistances[index].distance));
       },
     );
   }
@@ -281,13 +295,17 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 9),
-                child: Text('home.distance'.tr(), style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
+                child: Text('home.distance'.tr(),
+                    style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
               )
             ],
           ),
           Text(
             '$distance${'home.meter'.tr()}',
-            style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.bold, fontSize: 36, color: ColorHelper.darkGrey.color),
+            style: Theme.of(context)
+                .textTheme
+                .caption!
+                .copyWith(fontWeight: FontWeight.bold, fontSize: 36, color: ColorHelper.darkGrey.color),
           )
         ],
       ),

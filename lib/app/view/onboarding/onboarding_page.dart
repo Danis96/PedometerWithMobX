@@ -47,7 +47,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
+        decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
         child: Scaffold(body: _buildBody(context), bottomNavigationBar: _buildBottomButton(context)));
   }
 
@@ -68,8 +69,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('onBoarding.personal'.tr(), style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.darkGrey.color)),
-            Text('onBoarding.data'.tr(), style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.darkGrey.color)),
+            Text('onBoarding.personal'.tr(),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.darkGrey.color)),
+            Text('onBoarding.data'.tr(),
+                style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.darkGrey.color)),
           ],
         ),
         const SizedBox(height: 10),
@@ -83,7 +86,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget _buildHeadlineText(BuildContext context) {
     return Text(
       'onBoarding.headline_text'.tr(),
-      style: Theme.of(context).textTheme.bodyText2!.copyWith(color: ColorHelper.black.color, fontWeight: FontWeight.w200),
+      style:
+          Theme.of(context).textTheme.bodyText2!.copyWith(color: ColorHelper.black.color, fontWeight: FontWeight.w200),
     );
   }
 
@@ -130,7 +134,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       controller: store.municipalityController,
       onTap: () => _showModal(context, store),
       dropdownPressFunction: () => _showModal(context, store),
-      hintText: store.municipalityController.text.isNotEmpty ? store.municipalityController.text : 'profile.municipality_hint'.tr(),
+      hintText: store.municipalityController.text.isNotEmpty
+          ? store.municipalityController.text
+          : 'profile.municipality_hint'.tr(),
     );
   }
 
@@ -152,7 +158,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   controller: store.municipalityController,
                   hasTrailingIcon: true,
                   icon: IconButton(
-                      onPressed: () => Future.delayed(const Duration(milliseconds: 1500), () => FocusManager.instance.primaryFocus?.unfocus()),
+                      onPressed: () => Future.delayed(
+                          const Duration(milliseconds: 1500), () => FocusManager.instance.primaryFocus?.unfocus()),
                       icon: const Icon(Icons.check)),
                 ),
                 const SizedBox(height: 20),
@@ -180,17 +187,17 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   Widget _buildGenderDropdown(BuildContext context) {
     return DropdownButtonFormField2(
-      decoration:
-          InputDecoration(isDense: true, contentPadding: EdgeInsets.zero, border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+      decoration: InputDecoration(
+          isDense: true,
+          contentPadding: EdgeInsets.zero,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
       isExpanded: true,
-      hint: Text('onBoarding.gender_field_hint'.tr(), style: TextStyle(color: ColorHelper.darkGrey.color, fontSize: 18, fontWeight: FontWeight.w200)),
-      icon: Icon(Icons.arrow_drop_down, color: ColorHelper.black.color),
+      hint: Text('onBoarding.gender_field_hint'.tr(),
+          style: TextStyle(color: ColorHelper.darkGrey.color, fontSize: 18, fontWeight: FontWeight.w200)),
       style: TextStyle(color: ColorHelper.black.color, fontWeight: FontWeight.w400),
-      iconSize: 30,
-      buttonHeight: 60,
-      buttonPadding: const EdgeInsets.only(left: 20, right: 10),
-      dropdownDecoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-      items: store.genderItems.map((item) => DropdownMenuItem<String>(value: item, child: Text(item, style: const TextStyle(fontSize: 14)))).toList(),
+      items: store.genderItems
+          .map((item) => DropdownMenuItem<String>(value: item, child: Text(item, style: const TextStyle(fontSize: 14))))
+          .toList(),
       onChanged: (String? value) {
         store.genderController.text = value.toString();
       },

@@ -51,7 +51,7 @@ abstract class UserProfileBase with Store {
 
   @action
   Future<String?> uploadImage(BuildContext context) async {
-    final PickedFile? pickedFile = await picker.getImage(
+    final XFile? pickedFile = await picker.pickImage(
       source: ImageSource.gallery,
       imageQuality: 20,
     );

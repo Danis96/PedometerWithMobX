@@ -247,12 +247,7 @@ class _ProfilePageState extends State<ProfilePage> {
       isExpanded: true,
       hint: Text(authStore.isProfileGenderControllerNotEmpty() ? authStore.profileGenderController.text : 'onBoarding.gender_field_hint'.tr(),
           style: TextStyle(color: ColorHelper.darkGrey.color, fontSize: 18, fontWeight: FontWeight.w200)),
-      icon: Icon(Icons.arrow_drop_down, color: ColorHelper.black.color),
       style: TextStyle(color: ColorHelper.black.color, fontWeight: FontWeight.w400),
-      iconSize: 30,
-      buttonHeight: 60,
-      buttonPadding: const EdgeInsets.only(left: 20, right: 10),
-      dropdownDecoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
       items: authStore.genderItems
           .map((item) => DropdownMenuItem<String>(value: item, child: Text(item, style: const TextStyle(fontSize: 14))))
           .toList(),

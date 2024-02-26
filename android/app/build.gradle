@@ -1,3 +1,7 @@
+def keystorePropertiesFile = rootProject.file("key.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -26,7 +30,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,10 +51,16 @@ android {
 
     signingConfigs {
         sign {
-            storeFile file(System.getenv("FOS_KEYSTORE"))
-            storePassword System.getenv("FOS_KEYSTORE_PASSWORD")
-            keyAlias System.getenv("FOS_ALIAS")
-            keyPassword System.getenv("FOS_ALIAS_PASSWORD")
+            storeFile file(keystoreProperties['keystore'])
+            storePassword keystoreProperties['keystore_password']
+            keyAlias keystoreProperties['alias']
+            keyPassword keystoreProperties['alias_password']
+        }
+        release {
+            storeFile file(keystoreProperties['keystore'])
+            storePassword keystoreProperties['keystore_password']
+            keyAlias keystoreProperties['alias']
+            keyPassword keystoreProperties['alias_password']
         }
     }
 
@@ -62,14 +72,18 @@ android {
             signingConfig signingConfigs.sign
         }
         prod {
-
+            versionNameSuffix ""
+            signingConfig signingConfigs.sign
         }
     }
 
     defaultConfig {
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
         applicationId "com.fos.ljubljana"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -79,12 +93,12 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.sign
         }
         debug {
             minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.sign
         }
     }

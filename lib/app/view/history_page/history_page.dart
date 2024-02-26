@@ -16,8 +16,11 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
-      child: Scaffold(appBar: AppBar(backgroundColor: ColorHelper.blue.color, elevation: 0, leading: const SizedBox()), body: _buildBody(context)),
+      decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/grey_background.png'), fit: BoxFit.cover)),
+      child: Scaffold(
+          appBar: AppBar(backgroundColor: ColorHelper.blue.color, elevation: 0, leading: const SizedBox()),
+          body: _buildBody(context)),
     );
   }
 }
@@ -43,7 +46,8 @@ Widget _buildBlueCoverContainer(BuildContext context) {
   return Container(
       height: 400,
       decoration: BoxDecoration(
-          color: ColorHelper.blue.color, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))));
+          color: ColorHelper.blue.color,
+          borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25))));
 }
 
 Widget _buildWhiteCoverContainer(BuildContext context) {
@@ -65,12 +69,16 @@ Widget _buildHeadline(BuildContext context) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        IconButton(onPressed: () => Navigator.of(context).pop(), icon: Icon(Icons.arrow_back_ios, size: 40, color: ColorHelper.white.color)),
+        IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.arrow_back_ios, size: 40, color: ColorHelper.white.color)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text('history.your_history'.tr(), style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.white.color)),
-            Text('history.data'.tr(), style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.white.color)),
+            Text('history.your_history'.tr(),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(color: ColorHelper.white.color)),
+            Text('history.data'.tr(),
+                style: Theme.of(context).textTheme.caption!.copyWith(color: ColorHelper.white.color)),
           ],
         ),
       ],
@@ -98,34 +106,36 @@ Widget _buildChart(BuildContext context) {
         Container(
           width: MediaQuery.of(context).size.width / 1.06,
           height: 217,
-          decoration:
-          BoxDecoration(border: Border(left: BorderSide(color: ColorHelper.white.color!), bottom: BorderSide(color: ColorHelper.white.color!))),
+          decoration: BoxDecoration(
+              border: Border(
+                  left: BorderSide(color: ColorHelper.white.color!),
+                  bottom: BorderSide(color: ColorHelper.white.color!))),
           child: SfCartesianChart(
-              primaryXAxis: CategoryAxis(isVisible: false, maximum: 9),
+              primaryXAxis: const CategoryAxis(isVisible: false, maximum: 9),
               backgroundColor: Colors.transparent,
               plotAreaBackgroundColor: Colors.transparent,
               plotAreaBorderColor: Colors.transparent,
-              primaryYAxis: CategoryAxis(isVisible: false),
-              series: <ChartSeries<_ChartData, String>>[
-                ColumnSeries<_ChartData, String>(
+              primaryYAxis: const CategoryAxis(isVisible: false),
+              series: <CartesianSeries<_ChartData, String>>[
+                LineSeries<_ChartData, String>(
                   dataSource: data,
                   xValueMapper: (_ChartData data, _) => data.x,
                   yValueMapper: (_ChartData data, _) => data.y,
                   name: 'History data',
                   color: Colors.white,
-                  isTrackVisible: false,
                 )
               ]),
         ),
         const SizedBox(height: 10),
         Text('history.history_data'.tr(),
-            style: Theme.of(context).textTheme.headline6!.copyWith(color: ColorHelper.white.color, fontWeight: FontWeight.w300))
+            style: Theme.of(context)
+                .textTheme
+                .headline6!
+                .copyWith(color: ColorHelper.white.color, fontWeight: FontWeight.w300))
       ],
     ),
   );
 }
-
-
 
 Widget _buildTopResultSection(BuildContext context) {
   return Padding(
@@ -133,7 +143,8 @@ Widget _buildTopResultSection(BuildContext context) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('history.results'.tr(), style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.w900)),
+        Text('history.results'.tr(),
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.w900)),
         _buildTopResults(context),
       ],
     ),
@@ -146,7 +157,8 @@ Widget _buildTopResults(BuildContext context) {
     physics: const NeverScrollableScrollPhysics(),
     itemCount: _results.length,
     itemBuilder: (BuildContext context, int index) {
-      return Container(padding: const EdgeInsets.symmetric(vertical: 5), child: _resultCard(context, index, _results[index]));
+      return Container(
+          padding: const EdgeInsets.symmetric(vertical: 5), child: _resultCard(context, index, _results[index]));
     },
   );
 }
@@ -178,16 +190,22 @@ Widget _resultCard(BuildContext context, int index, int distance) {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
-                  child: Text('21.03.2022'.tr(), style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
+                  child: Text('21.03.2022'.tr(),
+                      style:
+                          Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
                 ),
-                Text('home.distance'.tr(), style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
+                Text('home.distance'.tr(),
+                    style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 14, fontWeight: FontWeight.w400)),
               ],
             )
           ],
         ),
         Text(
           '$distance${'home.meter'.tr()}',
-          style: Theme.of(context).textTheme.caption!.copyWith(fontWeight: FontWeight.bold, fontSize: 36, color: ColorHelper.darkGrey.color),
+          style: Theme.of(context)
+              .textTheme
+              .caption!
+              .copyWith(fontWeight: FontWeight.bold, fontSize: 36, color: ColorHelper.darkGrey.color),
         )
       ],
     ),
